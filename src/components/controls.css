@@ -1,0 +1,89 @@
+.form-control {
+  --ui-form-control-bg: var(--ui-control-bg);
+  --ui-form-control-color: var(--ui-control-color);
+  --ui-form-control-border-style: var(--ui-control-border-style);
+  --ui-form-control-border-width: var(--ui-control-border-width);
+  --ui-form-control-border-color: var(--ui-control-border-color);
+  --ui-form-control-border-color-hover: var(--ui-control-border-color-hover);
+  --ui-form-control-border-color-focus: var(--ui-control-border-color-focus);
+  --ui-form-control-border-radius: var(--ui-control-border-radius);
+  --ui-form-control-padding-y: 0.5rem;
+  --ui-form-control-padding-x: 0.75rem;
+  --ui-form-control-height: var(--size-md);
+  --ui-form-control-select-arrow-color: var(--gray-11);
+  --ui-form-control-select-arrow-size: 0.3125rem;
+  --ui-form-control-select-arrow-offset: 1rem;
+  --ui-form-control-font-size: 0.875rem;
+  --ui-form-control-placeholder-color: var(--gray-11);
+}
+
+.form-control::-webkit-outer-spin-button,
+.form-control::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.form-control[type="number"] {
+  appearance: textfield;
+}
+.form-control-label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: var(--text-sm);
+}
+.form-control {
+  color: var(--ui-form-control-color);
+  border-width: var(--ui-form-control-border-width);
+  border-color: var(--ui-form-control-border-color);
+  border-radius: var(--ui-form-control-border-radius);
+  background: var(--ui-form-control-bg);
+  padding-right: var(--ui-form-control-padding-x);
+  padding-left: var(--ui-form-control-padding-x);
+  width: 100%;
+  height: var(--ui-form-control-height);
+  font-size: var(--ui-form-control-font-size);
+  transition-duration: var(--duration-1);
+  transition-property: var(--transition-property);
+  transition-timing-function: var(--ease-3);
+  outline: var(--ui-form-control-border-width) solid transparent;
+  outline-offset: calc(var(--ui-form-control-border-width) * -1);
+}
+.form-control:where(textarea) {
+  padding-top: var(--ui-form-control-padding-y);
+  padding-bottom: var(--ui-form-control-padding-y);
+  height: auto;
+  min-height: var(--ui-form-control-height);
+}
+.form-control:where(select) {
+  appearance: none;
+  position: relative;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ui-form-control-select-arrow-color) 50%),
+    linear-gradient(135deg, var(--ui-form-control-select-arrow-color) 50%, transparent 50%);
+  background-position:
+    calc(100% - var(--ui-form-control-select-arrow-offset) - var(--ui-form-control-select-arrow-size)) center,
+    calc(100% - var(--ui-form-control-select-arrow-offset)) center;
+  background-size:
+    var(--ui-form-control-select-arrow-size) var(--ui-form-control-select-arrow-size),
+    var(--ui-form-control-select-arrow-size) var(--ui-form-control-select-arrow-size);
+  background-repeat: no-repeat;
+}
+
+.form-control::placeholder {
+  color: var(--ui-form-control-placeholder-color);
+}
+.form-control:focus {
+  outline-color: var(--ui-form-control-border-color-focus);
+}
+.form-control:hover {
+  border-color: var(--ui-form-control-border-color-hover);
+}
+
+.form-control--sm {
+  --ui-form-control-height: var(--size-sm);
+  --ui-form-control-padding-x: 0.625rem;
+  --ui-form-control-border-radius: var(--radius-sm);
+}
+.form-control--lg {
+  --ui-form-control-height: var(--size-lg);
+  --ui-form-control-padding-x: 1.125rem;
+  --ui-form-control-font-size: 1rem;
+}

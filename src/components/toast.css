@@ -1,0 +1,178 @@
+.toasts {
+  --ui-toasts-z-index: var(--ui-top-layer-z-index);
+  --ui-toasts-boundary-offset-top: var(--ui-boundary-offset-top, 0);
+  --ui-toasts-boundary-offset-end: var(--ui-boundary-offset-end, 0);
+  --ui-toasts-boundary-offset-bottom: var(--ui-boundary-offset-bottom, 0);
+  --ui-toasts-boundary-offset-start: var(--ui-boundary-offset-start, 0);
+  --ui-toasts-gap: 0.375rem;
+}
+.toast {
+  --ui-toast-radius: var(--radius);
+  --ui-toast-padding: 0.75rem 1rem;
+  --ui-toast-font-size: var(--text-sm);
+  --ui-toast-font-weight: 500;
+  --ui-toast-gap: 0.5rem;
+  --ui-toast-color: var(--ui-panel-color);
+  --ui-toast-bg: var(--ui-panel-bg);
+  --ui-toast-border-width: var(--ui-panel-border-width);
+  --ui-toast-border-style: var(--ui-panel-border-style);
+  --ui-toast-border-color: var(--ui-panel-border-color);
+  --ui-toast-outline: var(--ui-panel-outline);
+  --ui-toast-outline-offset: var(--ui-panel-outline-offset);
+  --ui-toast-shadow-highlight: oklch(0.25 0.1 var(--warning-hue) / 0.3);
+  --ui-toast-shadow: 0 0.5rem 1rem -0.15rem oklch(var(--gray-darkest-oklch) / 0.1),
+    0 0.25rem 0.375rem -0.25rem var(--ui-toast-shadow-highlight);
+  --ui-toast-btn-close-size: 1.25rem;
+  --ui-toast-progress-height: 1px;
+  --ui-toast-progress-opacity: 0.15;
+  --ui-toast-progress-bg: currentColor;
+  --ui-toast-icon: var(--icon-check);
+  --ui-toast-icon-color: currentColor;
+  --ui-toast-backdrop-filter: blur(0.5rem);
+  --ui-toast-close-margin: 0 -0.25rem;
+}
+
+.toasts {
+  position: fixed;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  z-index: var(--ui-toasts-z-index);
+  inset: var(--ui-toasts-boundary-offset-top) var(--ui-toasts-boundary-offset-end)
+    var(--ui-toasts-boundary-offset-bottom) var(--ui-toasts-boundary-offset-start);
+  gap: var(--ui-toasts-gap);
+  &::backdrop {
+    display: none;
+  }
+}
+.toast {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  flex-shrink: 0;
+  overflow: hidden;
+  gap: var(--ui-toast-gap);
+  border-width: var(--ui-toast-border-width);
+  border-style: var(--ui-toast-border-style);
+  border-color: var(--ui-toast-border-color);
+  border-radius: var(--ui-toast-radius);
+  padding: var(--ui-toast-padding);
+  font-size: var(--ui-toast-font-size);
+  font-weight: var(--ui-toast-font-weight);
+  background: var(--ui-toast-bg);
+  color: var(--ui-toast-color);
+  pointer-events: auto;
+  animation-timing-function: var(--ease-in-out-3);
+  backdrop-filter: var(--ui-toast-backdrop-filter);
+  box-shadow: var(--ui-toast-shadow);
+  & .btn-close {
+    --ui-btn-icon-size: var(--ui-toast-btn-close-size);
+    margin: var(--ui-toast-close-margin);
+  }
+}
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--ui-toast-progress-height);
+  opacity: var(--ui-toast-progress-opacity);
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: calc(100% * var(--ui-autohide-progress));
+    background: var(--ui-toast-progress-bg);
+  }
+}
+
+:where(.ui-prevent-scroll) .toasts {
+  right: calc(var(--ui-root-scrollbar-width) + var(--ui-toasts-boundary-offset-end, 0));
+}
+
+.toast-icon {
+  aspect-ratio: 1;
+  width: 1.5rem;
+  flex-shrink: 0;
+  background-color: var(--ui-toast-icon-color);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: var(--ui-toast-icon);
+}
+
+.toast--danger {
+  --ui-toast-icon: var(--icon-not-allowed);
+  --ui-toast-color: var(--danger-12);
+  --ui-toast-bg: var(--danger-3);
+  --ui-toast-bg: color-mix(in var(--ui-space), var(--danger-3) 90%, transparent);
+  --ui-toast-border-style: none;
+  --ui-toast-shadow-highlight: oklch(0.25 0.3 var(--danger-hue) / 0.3);
+}
+.toast--success {
+  --ui-toast-icon: var(--icon-check-circle);
+  --ui-toast-color: var(--success-12);
+  --ui-toast-bg: var(--success-3);
+  --ui-toast-bg: color-mix(in var(--ui-space), var(--success-3) 90%, transparent);
+  --ui-toast-border-style: none;
+  --ui-toast-shadow-highlight: oklch(0.25 0.3 var(--success-hue) / 0.3);
+}
+.toast--warning {
+  --ui-toast-icon: var(--icon-warning);
+  --ui-toast-color: var(--warning-12);
+  --ui-toast-bg: var(--warning-3);
+  --ui-toast-bg: color-mix(in var(--ui-space), var(--warning-3) 90%, transparent);
+  --ui-toast-border-style: none;
+  --ui-toast-shadow-highlight: oklch(0.25 0.3 var(--warning-hue) / 0.3);
+}
+.toast--info {
+  --ui-toast-icon: var(--icon-info-circle);
+  --ui-toast-color: var(--info-12);
+  --ui-toast-bg: var(--info-3);
+  --ui-toast-bg: color-mix(in var(--ui-space), var(--info-3) 90%, transparent);
+  --ui-toast-border-style: none;
+  --ui-toast-shadow-highlight: oklch(0.25 0.3 var(--info-hue) / 0.3);
+}
+
+:is(.toasts--start, .toasts--top-start, .toasts--bottom-start) {
+  inset-inline-end: auto;
+}
+:is(.toasts--end, .toasts--top-end, .toasts--bottom-end) {
+  inset-inline-start: auto;
+  align-items: flex-end;
+}
+:is(.toasts--top, .toasts--bottom) {
+  align-items: center;
+}
+:is(.toasts--bottom, .toasts--bottom-start, .toasts--bottom-end) {
+  top: auto;
+}
+:is(.toasts--top, .toasts--top-start, .toasts--top-end) {
+  bottom: auto;
+}
+:is(.toasts--bottom-end, .toasts--top-end, .toasts--end) :where(.toast) {
+  --toast-animation-enter: var(--animation-slide-in-start), var(--animation-fade-in);
+  --toast-animation-leave: var(--animation-slide-out-end), var(--animation-fade-out);
+}
+:is(.toasts--bottom-start, .toasts--top-start, .toasts--start) :where(.toast) {
+  --toast-animation-enter: var(--animation-slide-in-end), var(--animation-fade-in);
+  --toast-animation-leave: var(--animation-slide-out-start), var(--animation-fade-out);
+}
+.toasts--bottom :where(.toast) {
+  --toast-animation-enter: var(--animation-slide-in-up), var(--animation-fade-in);
+  --toast-animation-leave: var(--animation-slide-out-down), var(--animation-fade-out);
+}
+.toasts--top :where(.toast) {
+  --toast-animation-enter: var(--animation-slide-in-down), var(--animation-fade-in);
+  --toast-animation-leave: var(--animation-slide-out-up), var(--animation-fade-out);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .toast:where(.ui-enter-active) {
+    animation: var(--toast-animation-enter);
+  }
+  .toast:where(.ui-leave-active) {
+    animation: var(--toast-animation-leave);
+  }
+}

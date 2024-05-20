@@ -1,0 +1,6 @@
+.slide-up-down-fade-enter-active {
+  animation: var(--animation-slide-in-up), var(--animation-fade-in);
+}
+.slide-up-down-fade-leave-active {
+  animation: var(--animation-slide-out-down), var(--animation-fade-out);
+}

@@ -1,0 +1,90 @@
+.accordion {
+  --ui-accordion-bg: var(--ui-main-bg);
+  --ui-accordion-gap: 0.5rem;
+  --ui-accordion-header-bg: var(--ui-panel-bg);
+  --ui-accordion-header-hover-bg: var(--gray-2);
+  --ui-accordion-header-open-color: var(--gray-12);
+  --ui-accordion-header-open-bg: var(--gray-1);
+  --ui-accordion-header-open-bg-hover: var(--gray-2);
+  --ui-accordion-header-padding: 0.75rem 1rem;
+  --ui-accordion-header-font-size: var(--text-sm);
+  --ui-accordion-header-font-weight: 500;
+  --ui-accordion-outline: 2px solid var(--gray-11);
+  --ui-accordion-outline-offset: -2px;
+  --ui-accordion-arrow-size: 1.5rem;
+  --ui-accordion-arrow-icon: var(--icon-chevron-down);
+  --ui-accordion-body-padding: 1rem;
+  --ui-accordion-border-width: var(--ui-border-width);
+  --ui-accordion-border-style: var(--ui-border-style);
+  --ui-accordion-border-color: var(--ui-border-color);
+  --ui-accordion-border-radius: var(--radius);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-accordion-gap);
+}
+
+.accordion-header {
+  padding: var(--ui-accordion-header-padding);
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--ui-accordion-header-bg);
+  transition-duration: var(--duration-1);
+  transition-property: var(--transition-property);
+  transition-timing-function: var(--ease-3);
+  outline: none;
+  font-size: var(--ui-accordion-header-font-size);
+  font-weight: var(--ui-accordion-header-font-weight);
+  &::after {
+    content: "";
+    display: block;
+    mask-image: var(--ui-accordion-arrow-icon);
+    width: var(--ui-accordion-arrow-size);
+    aspect-ratio: 1;
+    background-color: currentColor;
+    @media (prefers-reduced-motion: no-preference) {
+      transition-duration: var(--duration-3);
+      transition-property: var(--transition-property);
+      transition-timing-function: var(--ease-3);
+    }
+  }
+  &:hover {
+    background-color: var(--ui-accordion-header-hover-bg);
+  }
+  &:where(.ui-active) {
+    color: var(--ui-accordion-header-open-color);
+    background-color: var(--ui-accordion-header-open-bg);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    &:hover {
+      background-color: var(--ui-accordion-header-open-bg-hover);
+    }
+  }
+  &:where(.ui-active)::after {
+    scale: 1 -1;
+  }
+}
+.accordion-item {
+  border-width: var(--ui-accordion-border-width);
+  border-style: var(--ui-accordion-border-style);
+  border-color: var(--ui-accordion-border-color);
+  border-radius: var(--ui-accordion-border-radius);
+  background: var(--ui-accordion-bg);
+  overflow: hidden;
+  outline-color: transparent;
+  &:where(:has(.accordion-header:focus-visible)) {
+    outline: var(--ui-accordion-outline);
+    outline-offset: var(--ui-accordion-outline-offset);
+  }
+}
+.accordion-body {
+  padding: var(--ui-accordion-body-padding);
+  border-top-style: var(--ui-accordion-border-style);
+  border-top-color: var(--ui-accordion-border-color);
+  border-top-width: var(--ui-accordion-border-width);
+}

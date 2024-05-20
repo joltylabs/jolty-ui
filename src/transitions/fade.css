@@ -1,0 +1,6 @@
+.fade-enter-active {
+  animation: var(--animation-fade-in);
+}
+.fade-leave-active {
+  animation: var(--animation-fade-out);
+}

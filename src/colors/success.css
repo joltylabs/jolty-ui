@@ -1,0 +1,57 @@
+:where(:root) {
+  --success-hue: 125;
+}
+:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+  --success-1: oklch(0.9742 0.012 var(--success-hue));
+  --success-2: oklch(0.9612 0.021 var(--success-hue));
+  --success-3: oklch(0.9377 0.034 var(--success-hue));
+  --success-4: oklch(0.9063 0.054 var(--success-hue));
+  --success-5: oklch(0.8764 0.071 var(--success-hue));
+  --success-6: oklch(0.835 0.095 var(--success-hue));
+  --success-7: oklch(0.7862 0.126 var(--success-hue));
+  --success-8: oklch(0.7367 0.155 var(--success-hue));
+  --success-9: oklch(0.541 0.198 var(--success-hue));
+  --success-10: oklch(0.5102 0.189 var(--success-hue));
+  --success-11: oklch(0.4811 0.152 var(--success-hue));
+  --success-12: oklch(0.3712 0.099 var(--success-hue));
+
+  --success-a1: oklch(0.65 0.22 var(--success-hue) / 0.06);
+  --success-a2: oklch(0.65 0.22 var(--success-hue) / 0.1);
+  --success-a3: oklch(0.65 0.22 var(--success-hue) / 0.16);
+  --success-a4: oklch(0.65 0.22 var(--success-hue) / 0.24);
+  --success-a5: oklch(0.65 0.22 var(--success-hue) / 0.32);
+  --success-a6: oklch(0.65 0.22 var(--success-hue) / 0.42);
+  --success-a7: oklch(0.65 0.22 var(--success-hue) / 0.56);
+  --success-a8: oklch(0.65 0.22 var(--success-hue) / 0.7);
+  --success-a9: oklch(0.54 0.2 var(--success-hue));
+  --success-a10: oklch(0.51 0.19 var(--success-hue));
+  --success-a11: oklch(0.4 0.18 var(--success-hue) / 0.86);
+  --success-a12: oklch(0.3 0.11 var(--success-hue) / 0.9);
+}
+:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+  --success-1: oklch(22.5% 0.033 var(--success-hue));
+  --success-2: oklch(25.49% 0.051 var(--success-hue));
+  --success-3: oklch(29.33% 0.071 var(--success-hue));
+  --success-4: oklch(32.5% 0.085 var(--success-hue));
+  --success-5: oklch(35.38% 0.099 var(--success-hue));
+  --success-6: oklch(40.38% 0.119 var(--success-hue));
+  --success-7: oklch(45.4% 0.138 var(--success-hue));
+  --success-8: oklch(49.54% 0.16 var(--success-hue));
+  --success-9: oklch(56.19% 0.201 var(--success-hue));
+  --success-10: oklch(60.45% 0.192 var(--success-hue));
+  --success-11: oklch(81.08% 0.106 var(--success-hue));
+  --success-12: oklch(92.23% 0.043 var(--success-hue));
+
+  --success-a1: oklch(0.65 0.22 var(--success-hue) / 0.1);
+  --success-a2: oklch(0.65 0.22 var(--success-hue) / 0.16);
+  --success-a3: oklch(0.65 0.22 var(--success-hue) / 0.24);
+  --success-a4: oklch(0.65 0.22 var(--success-hue) / 0.3);
+  --success-a5: oklch(0.65 0.22 var(--success-hue) / 0.36);
+  --success-a6: oklch(0.65 0.22 var(--success-hue) / 0.46);
+  --success-a7: oklch(0.65 0.22 var(--success-hue) / 0.56);
+  --success-a8: oklch(0.65 0.22 var(--success-hue) / 0.66);
+  --success-a9: oklch(0.6 0.22 var(--success-hue) / 0.9);
+  --success-a10: oklch(0.65 0.21 var(--success-hue) / 0.9);
+  --success-a11: oklch(0.9 0.12 var(--success-hue) / 0.86);
+  --success-a12: oklch(0.94 0.05 var(--success-hue) / 0.98);
+}

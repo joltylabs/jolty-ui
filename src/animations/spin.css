@@ -1,0 +1,10 @@
+:where(:root),
+::backdrop {
+  --animation-spin: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

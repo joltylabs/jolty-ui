@@ -1,0 +1,23 @@
+:where(:root),
+::backdrop {
+  --animation-pulse: pulse 2s var(--ease-out-3, ease-out) infinite;
+}
+
+/* if @property is not supported */
+@supports not (((height: 1lh) and (animation-timeline: none)) or ((height: 1lh) and (margin-trim: none))) {
+  * {
+    --pulse-size: unset;
+  }
+}
+
+@property --pulse-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes pulse {
+  50% {
+    scale: var(--pulse-size, 0.9);
+  }
+}

@@ -1,0 +1,65 @@
+.checkbox {
+  --ui-checkbox-bg: var(--ui-control-bg);
+  --ui-checkbox-color: white;
+  --ui-checkbox-border-style: var(--ui-control-border-style);
+  --ui-checkbox-border-width: var(--ui-control-border-width);
+  --ui-checkbox-border-color: var(--ui-control-border-color);
+  --ui-checkbox-border-color-hover: var(--ui-control-border-color-hover);
+  --ui-checkbox-border-color-focus: var(--ui-control-border-color-focus);
+  --ui-checkbox-border-radius: var(--radius-xs);
+  --ui-checkbox-outline-width: 0.25rem;
+  --ui-checkbox-outline-color: var(--accent-a6);
+  --ui-checkbox-outline-offset: -1px;
+  --ui-checkbox-checked-bg: var(--accent-9);
+  --ui-checkbox-checked-bg-hover: var(--accent-10);
+  --ui-checkbox-checked-border-color: var(--accent-9);
+  --ui-checkbox-checked-border-color-hover: var(--accent-10);
+  --ui-checkbox-icon: var(--icon-check);
+  --ui-checkbox-size: 1rem;
+}
+
+.checkbox {
+  appearance: none;
+  width: var(--ui-checkbox-size);
+  height: fit-content;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  color: var(--ui-checkbox-color);
+  border-width: var(--ui-checkbox-border-width);
+  border-color: var(--ui-checkbox-border-color);
+  border-radius: var(--ui-checkbox-border-radius);
+  background: var(--ui-checkbox-bg);
+  background-size: contain;
+  position: relative;
+  transition-duration: var(--duration-1);
+  transition-property: var(--transition-property);
+  transition-timing-function: var(--ease-3);
+  outline: var(--ui-checkbox-outline-width) transparent solid;
+  &:hover {
+    border-color: var(--ui-checkbox-border-color-hover);
+    cursor: pointer;
+  }
+  &:focus-visible {
+    border-color: var(--ui-checkbox-border-color-focus);
+    outline-color: var(--ui-checkbox-outline-color);
+    outline-offset: var(--ui-checkbox-outline-offset);
+  }
+  &:is(:checked, [aria-checked="true"]) {
+    background-color: var(--ui-checkbox-checked-bg);
+    border-color: var(--ui-checkbox-checked-bg);
+    &:hover {
+      background-color: var(--ui-checkbox-checked-bg-hover);
+      border-color: var(--ui-checkbox-checked-bg-hover);
+    }
+  }
+  &:is(:checked, [aria-checked="true"])::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-color: currentColor;
+    mask-image: var(--ui-checkbox-icon);
+    mask-size: contain;
+    mask-position: center;
+  }
+}

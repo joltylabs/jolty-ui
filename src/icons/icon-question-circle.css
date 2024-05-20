@@ -1,0 +1,6 @@
+:root {
+  --icon-question-circle: url("data:image/svg+xml,%3Csvg width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22 fill%3D%22none%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E  %3Cpath d%3D%22M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z%22 stroke%3D%22currentColor%22 stroke-width%3D%221.5%22 stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22%2F%3E  %3Cellipse cx%3D%2211.8201%22 cy%3D%2216.1984%22 rx%3D%220.85035%22 ry%3D%220.841486%22 fill%3D%22currentColor%22%2F%3E  %3Cpath d%3D%22M11.9263 13.221C11.9151 12.1468 12.594 11.6667 13.1709 11.2489C13.6149 10.9274 14.2354 10.4735 14.2802 9.45249C14.2806 9.01362 14.2047 8.70574 13.9909 8.3025C13.8843 8.12718 13.6153 7.79727 13.3496 7.63031C12.8574 7.25339 12.0712 7.0752 11.2813 7.2438C9.88596 7.54158 9.53256 8.58048 9.53326 9.16152%22 stroke%3D%22currentColor%22 stroke-width%3D%221.5%22 stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+}
+.icon--question-circle {
+  --icon: var(--icon-question-circle);
+}

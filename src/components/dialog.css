@@ -1,0 +1,384 @@
+.dialog {
+  --ui-dialog-color: var(--ui-panel-color);
+  --ui-dialog-bg: var(--ui-panel-bg);
+  --ui-dialog-border-style: var(--ui-panel-border-style);
+  --ui-dialog-border-width: var(--ui-panel-border-width);
+  --ui-dialog-border-color: var(--ui-panel-border-color);
+  --ui-dialog-outline: var(--ui-panel-outline);
+  --ui-dialog-outline-offset: var(--ui-panel-outline-offset);
+
+  --ui-dialog-shadow: var(--shadow-lg);
+
+  --ui-dialog-padding-x: 1.75rem;
+  --ui-dialog-padding-y: 1.5rem;
+
+  --ui-dialog-size: fit-content;
+  --ui-dialog-size-xs: 16rem;
+  --ui-dialog-size-sm: 20rem;
+  --ui-dialog-size-md: 28rem;
+  --ui-dialog-size-lg: 36rem;
+
+  --ui-dialog-border-radius: var(--radius-lg);
+
+  --ui-dialog-boundary-offset-top: var(--ui-boundary-offset-top);
+  --ui-dialog-boundary-offset-end: var(--ui-boundary-offset-end);
+  --ui-dialog-boundary-offset-bottom: var(--ui-boundary-offset-bottom);
+  --ui-dialog-boundary-offset-start: var(--ui-boundary-offset-start);
+
+  --ui-dialog-title-font-size: var(--text-md);
+  --ui-dialog-title-font-weight: 600;
+  --ui-dialog-title-margin-bottom: 0.5rem;
+
+  --ui-dialog-description-font-size: var(--text-sm);
+
+  --ui-dialog-btns-margin-top: 1rem;
+  --ui-dialog-btns-gap: 0.5rem;
+
+  --ui-dialog-header-gap: 0.75rem;
+  --ui-dialog-header-padding-bottom: 0.5rem;
+  --ui-dialog-footer-padding-top: 1rem;
+
+  --ui-dialog-close-offset-top: 0.75rem;
+  --ui-dialog-close-offset-end: 0.75rem;
+
+  --ui-dialog-slide-size: 2rem;
+  --ui-dialog-drawer-slide-size: 50%;
+}
+
+.dialog-backdrop,
+.dialog-root::backdrop,
+.dialog::backdrop {
+  opacity: 0;
+  background: var(--ui-backdrop-bg);
+  transition: var(--ui-backdrop-transition);
+}
+
+.dialog-root,
+.dialog {
+  position: fixed;
+  inset: 0;
+  display: block;
+  z-index: var(--ui-top-layer-z-index);
+  outline: none;
+}
+.dialog-root--absolute,
+:where(.dialog-root) .dialog {
+  position: absolute;
+}
+.dialog-root {
+  overflow: hidden;
+}
+.dialog-root:where(:not(.ui-modal)) {
+  pointer-events: none;
+}
+:where(.dialog-root > *:not(.dialog-backdrop)),
+:where(.dialog-root.ui-modal > .dialog-backdrop:not([inert])) {
+  pointer-events: auto;
+}
+
+.dialog {
+  --ui-dialog-animation-enter: var(--animation-scale-in-up), var(--animation-fade-in);
+  --ui-dialog-animation-leave: var(--animation-scale-out-down), var(--animation-fade-out);
+  --slide-size: var(--ui-dialog-slide-size);
+  color: var(--ui-dialog-color);
+  background-color: var(--ui-dialog-bg);
+  border-style: var(--ui-dialog-border-style);
+  border-color: var(--ui-dialog-border-color);
+  border-width: var(--ui-dialog-border-width);
+  display: block;
+  margin: auto;
+  height: fit-content;
+  width: var(--ui-dialog-size);
+  max-height: calc(100% - var(--ui-dialog-boundary-offset-top) - var(--ui-dialog-boundary-offset-bottom));
+  max-width: calc(100% - var(--ui-dialog-boundary-offset-start) - var(--ui-dialog-boundary-offset-end));
+  inset: var(--ui-dialog-boundary-offset-top) var(--ui-dialog-boundary-offset-end)
+    var(--ui-dialog-boundary-offset-bottom) var(--ui-dialog-boundary-offset-start);
+  padding: var(--ui-dialog-padding-y) var(--ui-dialog-padding-x);
+  border-radius: var(--ui-dialog-border-radius);
+  transform-origin: var(--ui-dialog-origin-x, center) var(--ui-dialog-origin-y, center);
+  overflow-y: auto;
+  box-shadow: var(--ui-dialog-shadow);
+}
+
+.dialog:focus-visible,
+.dialog-root:focus-visible :where(.dialog) {
+  outline: var(--ui-dialog-outline);
+  outline-offset: var(--ui-dialog-outline-offset);
+}
+
+:where(.dialog-root, .ui-has-backdrop)::backdrop,
+:where(.dialog--no-backdrop, .dialog:not(.ui-modal))::backdrop {
+  display: none;
+}
+
+.dialog-backdrop {
+  z-index: calc(var(--ui-top-layer-z-index) - 1);
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+}
+:where(.dialog-root) .dialog-backdrop {
+  position: absolute;
+  z-index: -1;
+}
+.dialog-backdrop.ui-active,
+:where(.dialog).ui-active::backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dialog-title {
+  font-weight: var(--ui-dialog-title-font-weight);
+  font-size: var(--ui-dialog-title-font-size);
+  margin-bottom: var(--ui-dialog-title-margin-bottom);
+}
+.dialog-description {
+  font-size: var(--ui-dialog-description-font-size);
+}
+.dialog-btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: var(--ui-dialog-btns-margin-top);
+  gap: var(--ui-dialog-btns-gap);
+}
+.dialog-header {
+  padding: var(--ui-dialog-padding-y) var(--ui-dialog-padding-x) var(--ui-dialog-header-padding-bottom);
+  display: flex;
+  align-items: center;
+  gap: var(--ui-dialog-header-gap);
+}
+.dialog-footer {
+  padding: var(--ui-dialog-footer-padding-top) var(--ui-dialog-padding-x) var(--ui-dialog-padding-y);
+  & :where(.dialog-btns) {
+    margin-top: 0;
+  }
+}
+.dialog:where(
+    :has(
+        > :is(.dialog-body, .dialog-header, .dialog-footer),
+        > .dialog-safe-area > :is(.dialog-body, .dialog-header, .dialog-footer)
+      )
+  ) {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.dialog-body {
+  padding: var(--ui-dialog-padding-y) var(--ui-dialog-padding-x);
+  overflow: auto;
+  flex-grow: 1;
+  position: relative;
+  &:where(.dialog-header ~ *) {
+    padding-top: 0;
+  }
+  &:where(:has(~ .dialog-footer)) {
+    padding-bottom: 0;
+  }
+}
+.dialog-safe-area {
+  display: contents;
+}
+
+.dialog-close {
+  position: absolute;
+  top: var(--ui-dialog-close-offset-top);
+  inset-inline-end: var(--ui-dialog-close-offset-end);
+}
+:where(.dialog-header) {
+  & .dialog-title {
+    margin-bottom: 0;
+  }
+  & .dialog-btns {
+    margin-left: auto;
+  }
+  & .dialog-close {
+    &:where(:last-child) {
+      position: relative;
+      inset: auto;
+      margin-inline-start: auto;
+      margin-inline-end: calc(var(--ui-btn-icon-size) - var(--ui-btn-size));
+    }
+    &:where(:first-child) {
+      position: relative;
+      inset: auto;
+      margin-inline-start: calc(var(--ui-btn-icon-size) - var(--ui-btn-size));
+    }
+  }
+}
+
+.dialog-autohide-progress {
+  position: absolute;
+  height: 0.125rem;
+  background-color: var(--ui-dialog-border-color);
+  flex-shrink: 0;
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: calc(100% * var(--ui-autohide-progress));
+    background-color: red;
+  }
+}
+
+:is(.dialog--start, .dialog--top-start, .dialog--bottom-start) {
+  inset-inline-end: auto;
+  margin-inline-end: var(--ui-dialog-boundary-offset-end);
+  --ui-dialog-origin-x: calc(100% * var(--rtl, 0));
+  &:where(.dialog--no-boundary-offset) {
+    border-inline-start-width: 0;
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+    inset-inline-start: 0;
+    margin-inline-end: 0;
+  }
+}
+:is(.dialog--end, .dialog--top-end, .dialog--bottom-end) {
+  inset-inline-start: auto;
+  margin-inline-start: var(--ui-dialog-boundary-offset-start);
+  --ui-dialog-origin-x: calc(100% - (100% * var(--rtl, 0)));
+  &:where(.dialog--no-boundary-offset) {
+    border-inline-end-width: 0;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+    inset-inline-end: 0;
+    margin-inline-start: 0;
+  }
+}
+:is(.dialog--top, .dialog--top-start, .dialog--top-end) {
+  bottom: auto;
+  margin-bottom: var(--ui-dialog-boundary-offset-bottom);
+  --ui-dialog-origin-y: top;
+  &:where(.dialog--no-boundary-offset) {
+    border-top-width: 0;
+    border-start-start-radius: 0;
+    border-start-end-radius: 0;
+    top: 0;
+    margin-bottom: 0;
+  }
+}
+:is(.dialog--bottom, .dialog--bottom-start, .dialog--bottom-end) {
+  top: auto;
+  margin-top: var(--ui-dialog-boundary-offset-top);
+  --ui-dialog-origin-y: bottom;
+  &:where(.dialog--no-boundary-offset) {
+    border-bottom-width: 0;
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+    bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.dialog--drawer {
+  border-radius: 0;
+  --slide-size: var(--ui-dialog-drawer-slide-size);
+  &:where(.dialog--start, .dialog--end) {
+    width: var(--ui-dialog-size);
+    height: 100%;
+    max-height: none;
+  }
+  &:where(.dialog--top, .dialog--bottom) {
+    height: var(--ui-dialog-size);
+    width: 100%;
+    max-width: none;
+  }
+  &:where(.dialog--start) {
+    inset: 0;
+    inset-inline-end: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-height: none;
+    border-block-width: 0;
+    border-inline-width: 0 var(--ui-dialog-border-width);
+    --ui-dialog-animation-enter: var(--animation-slide-in-end), var(--animation-fade-in);
+    --ui-dialog-animation-leave: var(--animation-slide-out-start), var(--animation-fade-out);
+  }
+  &:where(.dialog--end) {
+    inset: 0;
+    inset-inline-start: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-height: none;
+    border-block-width: 0;
+    border-inline-width: var(--ui-dialog-border-width) 0;
+    --ui-dialog-animation-enter: var(--animation-slide-in-start), var(--animation-fade-in);
+    --ui-dialog-animation-leave: var(--animation-slide-out-end), var(--animation-fade-out);
+  }
+  &:where(.dialog--top) {
+    inset: 0;
+    bottom: auto;
+    margin-bottom: var(--ui-dialog-boundary-offset-top);
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    border-width: 0 0 var(--ui-dialog-border-width);
+    --ui-dialog-animation-enter: var(--animation-slide-in-down), var(--animation-fade-in);
+    --ui-dialog-animation-leave: var(--animation-slide-out-up), var(--animation-fade-out);
+  }
+  &:where(.dialog--bottom) {
+    inset: 0;
+    top: auto;
+    margin-top: var(--ui-dialog-boundary-offset-top);
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    border-width: var(--ui-dialog-border-width) 0 0;
+    --ui-dialog-animation-enter: var(--animation-slide-in-up), var(--animation-fade-in);
+    --ui-dialog-animation-leave: var(--animation-slide-out-down), var(--animation-fade-out);
+  }
+}
+
+.dialog--xs {
+  --ui-dialog-size: var(--ui-dialog-size-xs);
+}
+.dialog--sm {
+  --ui-dialog-size: var(--ui-dialog-size-sm);
+}
+.dialog--md {
+  --ui-dialog-size: var(--ui-dialog-size-md);
+}
+.dialog--lg {
+  --ui-dialog-size: var(--ui-dialog-size-lg);
+}
+
+.ui-prevent-scroll
+  :where(
+    .ui-dialog-init:not(.ui-prevents-scroll) > .dialog,
+    .ui-dialog-init:not(.ui-prevents-scroll).dialog
+  ):where(.ui-root-relative:not(.dialog--drawer, .dialog--no-boundary-offset)) {
+  right: calc(var(--ui-root-scrollbar-width) + var(--ui-dialog-boundary-offset-end, 0));
+}
+
+.dialog--fullscreen {
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  border-width: 0;
+  margin: 0;
+  &::backdrop {
+    display: none;
+  }
+}
+.dialog--full-width {
+  width: 100%;
+}
+.dialog--full-height {
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dialog.ui-dismiss-prevented {
+    animation: var(--animation-spring);
+  }
+  .dialog--animate-prevent-hide.ui-hide-prevented {
+    animation: var(--animation-shake-x);
+  }
+  .dialog:where(.ui-enter-active) {
+    animation: var(--ui-dialog-animation-enter);
+  }
+  .dialog:where(.ui-leave-active) {
+    animation: var(--ui-dialog-animation-leave);
+  }
+}

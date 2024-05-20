@@ -1,0 +1,57 @@
+:where(:root) {
+  --accent-hue: 267;
+}
+:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+  --accent-1: oklch(0.9742 0.012 var(--accent-hue));
+  --accent-2: oklch(0.9612 0.021 var(--accent-hue));
+  --accent-3: oklch(0.9377 0.034 var(--accent-hue));
+  --accent-4: oklch(0.9063 0.054 var(--accent-hue));
+  --accent-5: oklch(0.8764 0.071 var(--accent-hue));
+  --accent-6: oklch(0.835 0.095 var(--accent-hue));
+  --accent-7: oklch(0.7862 0.126 var(--accent-hue));
+  --accent-8: oklch(0.7367 0.155 var(--accent-hue));
+  --accent-9: oklch(0.541 0.198 var(--accent-hue));
+  --accent-10: oklch(0.5102 0.189 var(--accent-hue));
+  --accent-11: oklch(0.4811 0.152 var(--accent-hue));
+  --accent-12: oklch(0.3712 0.099 var(--accent-hue));
+
+  --accent-a1: oklch(0.65 0.22 var(--accent-hue) / 0.06);
+  --accent-a2: oklch(0.65 0.22 var(--accent-hue) / 0.1);
+  --accent-a3: oklch(0.65 0.22 var(--accent-hue) / 0.16);
+  --accent-a4: oklch(0.65 0.22 var(--accent-hue) / 0.24);
+  --accent-a5: oklch(0.65 0.22 var(--accent-hue) / 0.32);
+  --accent-a6: oklch(0.65 0.22 var(--accent-hue) / 0.42);
+  --accent-a7: oklch(0.65 0.22 var(--accent-hue) / 0.56);
+  --accent-a8: oklch(0.65 0.22 var(--accent-hue) / 0.7);
+  --accent-a9: oklch(0.54 0.2 var(--accent-hue));
+  --accent-a10: oklch(0.51 0.19 var(--accent-hue));
+  --accent-a11: oklch(0.4 0.18 var(--accent-hue) / 0.86);
+  --accent-a12: oklch(0.3 0.11 var(--accent-hue) / 0.9);
+}
+:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+  --accent-1: oklch(22.5% 0.033 var(--accent-hue));
+  --accent-2: oklch(25.49% 0.051 var(--accent-hue));
+  --accent-3: oklch(29.33% 0.071 var(--accent-hue));
+  --accent-4: oklch(32.5% 0.085 var(--accent-hue));
+  --accent-5: oklch(35.38% 0.099 var(--accent-hue));
+  --accent-6: oklch(40.38% 0.119 var(--accent-hue));
+  --accent-7: oklch(45.4% 0.138 var(--accent-hue));
+  --accent-8: oklch(49.54% 0.16 var(--accent-hue));
+  --accent-9: oklch(56.19% 0.201 var(--accent-hue));
+  --accent-10: oklch(60.45% 0.192 var(--accent-hue));
+  --accent-11: oklch(81.08% 0.106 var(--accent-hue));
+  --accent-12: oklch(92.23% 0.043 var(--accent-hue));
+
+  --accent-a1: oklch(0.65 0.22 var(--accent-hue) / 0.1);
+  --accent-a2: oklch(0.65 0.22 var(--accent-hue) / 0.16);
+  --accent-a3: oklch(0.65 0.22 var(--accent-hue) / 0.24);
+  --accent-a4: oklch(0.65 0.22 var(--accent-hue) / 0.3);
+  --accent-a5: oklch(0.65 0.22 var(--accent-hue) / 0.36);
+  --accent-a6: oklch(0.65 0.22 var(--accent-hue) / 0.46);
+  --accent-a7: oklch(0.65 0.22 var(--accent-hue) / 0.56);
+  --accent-a8: oklch(0.65 0.22 var(--accent-hue) / 0.66);
+  --accent-a9: oklch(0.6 0.22 var(--accent-hue) / 0.9);
+  --accent-a10: oklch(0.65 0.21 var(--accent-hue) / 0.9);
+  --accent-a11: oklch(0.9 0.12 var(--accent-hue) / 0.86);
+  --accent-a12: oklch(0.94 0.05 var(--accent-hue) / 0.98);
+}

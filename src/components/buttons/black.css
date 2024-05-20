@@ -1,0 +1,30 @@
+.btn--black {
+  --ui-btn-bg: var(--gray-a12-light);
+  --ui-btn-bg-hover: color-mix(in var(--ui-space), var(--gray-a11-light), var(--gray-a12-light));
+  --ui-btn-outline-color: var(--gray-a12-light);
+  --ui-btn-color: white;
+  &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {
+    --ui-btn-color: var(--gray-a12-light);
+    --ui-btn-outline-color: var(--gray-a6-light);
+  }
+  &:where(.btn--outline, .btn--surface) {
+    --ui-btn-border-color: var(--gray-a5-light);
+  }
+  &:where(.btn--link) {
+    --ui-btn-bg: transparent;
+    --ui-btn-bg-hover: transparent;
+    --ui-btn-color-hover: var(--gray-a11-light);
+  }
+  &:where(.btn--outline, .btn--ghost) {
+    --ui-btn-bg: transparent;
+    --ui-btn-bg-hover: var(--gray-a1-light);
+  }
+  &:where(.btn--soft) {
+    --ui-btn-bg: var(--gray-a3-light);
+    --ui-btn-bg-hover: var(--gray-a4-light);
+  }
+  &:where(.btn--surface) {
+    --ui-btn-bg: var(--gray-a1-light);
+    --ui-btn-bg-hover: var(--gray-a2-light);
+  }
+}

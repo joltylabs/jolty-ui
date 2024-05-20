@@ -1,0 +1,128 @@
+:where(:root),
+::backdrop {
+  --animation-slide-out-up: slide-out-up var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-out-down: slide-out-down var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-in-up: slide-in-up var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-in-down: slide-in-down var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-out-right: slide-out-right var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-out-end: slide-out-end var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-out-left: slide-out-left var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-out-start: slide-out-start var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-in-right: slide-in-right var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-in-end: slide-in-end var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-in-left: slide-in-left var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-slide-in-start: slide-in-start var(--duration-3, 200) var(--ease-3, ease-out);
+}
+
+/* if @property is not supported */
+@supports not (((height: 1lh) and (animation-timeline: none)) or ((height: 1lh) and (margin-trim: none))) {
+  * {
+    --slide-size: unset;
+    --slide-in-size: unset;
+    --slide-out-size: unset;
+  }
+}
+
+@property --slide-in-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+}
+@property --slide-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+}
+@property --slide-out-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+}
+
+@keyframes slide-in-up {
+  from {
+    animation-composition: add;
+    translate: 0 var(--slide-in-size, var(--slide-size, 100%));
+  }
+}
+
+@keyframes slide-in-down {
+  from {
+    animation-composition: add;
+    translate: 0 calc(var(--slide-in-size, var(--slide-size, 100%)) * -1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    animation-composition: add;
+    translate: calc(var(--slide-in-size, var(--slide-size, 100%)) * -1);
+  }
+}
+@keyframes slide-in-end {
+  from {
+    animation-composition: add;
+    translate: calc(
+      calc(var(--slide-in-size, var(--slide-size, 100%)) * -1) + var(--slide-in-size, var(--slide-size, 100%)) *
+        2 * var(--rtl, 0)
+    );
+  }
+}
+@keyframes slide-in-left {
+  from {
+    animation-composition: add;
+    translate: var(--slide-in-size, var(--slide-size, 100%));
+  }
+}
+@keyframes slide-in-start {
+  from {
+    animation-composition: add;
+    translate: calc(
+      var(--slide-in-size, var(--slide-size, 100%)) - var(--slide-in-size, var(--slide-size, 100%)) * 2 *
+        var(--rtl, 0)
+    );
+  }
+}
+
+@keyframes slide-out-up {
+  to {
+    animation-composition: add;
+    translate: 0 calc(var(--slide-out-size, var(--slide-size, 100%)) * -1);
+  }
+}
+
+@keyframes slide-out-down {
+  to {
+    animation-composition: add;
+    translate: 0 var(--slide-out-size, var(--slide-size, 100%));
+  }
+}
+
+@keyframes slide-out-right {
+  to {
+    animation-composition: add;
+    translate: var(--slide-out-size, var(--slide-size, 100%));
+  }
+}
+@keyframes slide-out-end {
+  to {
+    animation-composition: add;
+    translate: calc(
+      var(--slide-out-size, var(--slide-size, 100%)) - var(--slide-out-size, var(--slide-size, 100%)) * 2 *
+        var(--rtl, 0)
+    );
+  }
+}
+
+@keyframes slide-out-left {
+  to {
+    animation-composition: add;
+    translate: calc(var(--slide-out-size, var(--slide-size, 100%)) * -1);
+  }
+}
+@keyframes slide-out-start {
+  to {
+    animation-composition: add;
+    translate: calc(
+      calc(var(--slide-out-size, var(--slide-size, 100%)) * -1) +
+        var(--slide-out-size, var(--slide-size, 100%)) * 2 * var(--rtl, 0)
+    );
+  }
+}

@@ -1,0 +1,107 @@
+:where(:root),
+::backdrop {
+   --ui-space: oklch;
+
+   --text-xxs: calc(12 / 16 * 1rem);
+   --text-xs: calc(13 / 16 * 1rem);
+   --text-sm: calc(14 / 16 * 1rem);
+   --text-md: calc(16 / 16 * 1rem);
+   --text-lg: calc(18 / 16 * 1rem);
+   --text-xl: calc(20 / 16 * 1rem);
+   --text-2xl: calc(24 / 16 * 1rem);
+   --text-3xl: calc(30 / 16 * 1rem);
+   --text-4xl: calc(36 / 16 * 1rem);
+
+   --size-xxs: calc(24 / 16 * 1rem);
+   --size-xs: calc(28 / 16 * 1rem);
+   --size-sm: calc(32 / 16 * 1rem);
+   --size-md: calc(40 / 16 * 1rem);
+   --size-lg: calc(48 / 16 * 1rem);
+   --size-xl: calc(56 / 16 * 1rem);
+
+   --radius-xs: calc(4 / 16 * 1rem);
+   --radius-sm: calc(6 / 16 * 1rem);
+   --radius: calc(8 / 16 * 1rem);
+   --radius-lg: calc(12 / 16 * 1rem);
+   --radius-xl: calc(16 / 16 * 1rem);
+   --radius-xxl: calc(20 / 16 * 1rem);
+
+   --duration-1: 75ms;
+   --duration-2: 125ms;
+   --duration-3: 200ms;
+   --duration-4: 300ms;
+   --duration-5: 500ms;
+
+   --transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, outline-color, opacity, box-shadow,
+      transform, translate, scale, skew, filter, backdrop-filter;
+
+   --ui-backdrop-transition: opacity var(--duration-3) var(--ease-3),
+      visibility var(--duration-3) var(--ease-3);
+
+   --ui-top-layer-z-index: 999;
+
+   --ui-boundary-offset-top: 1rem;
+   --ui-boundary-offset-end: 1rem;
+   --ui-boundary-offset-bottom: 1rem;
+   --ui-boundary-offset-start: 1rem;
+}
+
+:where(:root, [data-mode='dark'], [data-mode='light'], [data-mode='reverse']) {
+   --ui-accent-color: var(--accent-9);
+   --ui-main-bg: var(--gray-0);
+   --ui-color: var(--gray-12);
+
+   --ui-border-style: solid;
+   --ui-border-width: 1px;
+   --ui-border-color: var(--gray-4);
+
+   --ui-panel-bg: var(--gray-0);
+   --ui-panel-color: var(--gray-12);
+   --ui-panel-border-width: 1px;
+   --ui-panel-border-style: none;
+   --ui-panel-border-color: var(--gray-4);
+   --ui-panel-outline: 2px solid var(--gray-3);
+   --ui-panel-outline-offset: 2px;
+
+   --ui-control-bg: var(--gray-0);
+   --ui-control-color: var(--gray-12);
+   --ui-control-border-style: solid;
+   --ui-control-border-width: 1px;
+   --ui-control-border-color: var(--gray-a6);
+   --ui-control-border-color-hover: var(--gray-a6);
+   --ui-control-border-color-focus: var(--gray-a7);
+   --ui-control-border-radius: var(--radius);
+
+   --shadow-xs: 0 1px 0.125rem 0 oklch(var(--gray-darkest-oklch) / 0.05);
+   --shadow-sm: 0 1px 0.1875rem 0 oklch(var(--gray-darkest-oklch) / 0.1),
+      0 1px 0.125rem -1px oklch(var(--gray-darkest-oklch) / 0.1);
+   --shadow: 0 0.25rem 0.375rem -1px oklch(var(--gray-darkest-oklch) / 0.1),
+      0 0.125rem 0.25rem -0.125rem oklch(var(--gray-darkest-oklch) / 0.1);
+   --shadow-lg: 0 0.625rem 1rem -0.1875rem oklch(var(--gray-darkest-oklch) / 0.1),
+      0 0.25rem 0.375rem -0.25rem oklch(var(--gray-darkest-oklch) / 0.1);
+   --shadow-xl: 0 1.25rem 1.5rem -0.375rem oklch(var(--gray-darkest-oklch) / 0.1),
+      0 0.5rem 0.625rem -0.375rem oklch(var(--gray-darkest-oklch) / 0.1);
+   --shadow-2xl: 0 1.5rem 3.125rem -0.75rem oklch(var(--gray-darkest-oklch) /
+            0.25);
+
+   &,
+   &::backdrop,
+   ::backdrop {
+      --ui-backdrop-bg: oklch(var(--gray-darkest-oklch) / 0.6);
+      --ui-backdrop-light-bg: oklch(var(--gray-darkest-oklch) / 0.2);
+   }
+}
+:where(
+      [data-mode='dark'],
+      :root:not([data-mode='dark']) [data-mode='reverse']
+   ) {
+   --ui-panel-bg: var(--gray-1);
+   --ui-panel-border-style: solid;
+}
+
+:where(:root) {
+   accent-color: var(--ui-accent-color);
+   background-color: var(--ui-main-bg);
+   color: var(--gray-12);
+}

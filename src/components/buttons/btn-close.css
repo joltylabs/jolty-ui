@@ -1,0 +1,36 @@
+.btn-close {
+  --ui-btn-close-color: currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: var(--ui-btn-close-size, var(--size-xs));
+  border-radius: var(--ui-btn-close-radius, var(--radius-xs));
+  transition-duration: var(--duration-1);
+  transition-property: var(--transition-property);
+  transition-timing-function: var(--ease-3);
+  outline: var(--ui-btn-close-outline-width, 2px) solid transparent;
+  outline-offset: var(--ui-btn-close-outline-offset, 2px);
+  &:where(:not(:hover, :focus-visible)) {
+    opacity: 0.75;
+  }
+  &:focus-visible {
+    outline-color: var(
+      --ui-btn-close-outline-color,
+      color-mix(
+        in var(--ui-space),
+        var(--ui-btn-close-outline-color, var(--ui-btn-close-color)) 25%,
+        transparent
+      )
+    );
+  }
+  &::before {
+    content: "";
+    display: block;
+    aspect-ratio: 1;
+    width: var(--ui-btn-close-icon-size, 1.5rem);
+    mask: var(--icon-cross) no-repeat center / contain;
+    background-color: currentColor;
+    transition: inherit;
+  }
+}

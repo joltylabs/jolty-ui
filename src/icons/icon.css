@@ -1,0 +1,12 @@
+.icon {
+  display: block;
+  aspect-ratio: 1;
+  width: var(--icon-size, 1.5rem);
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: var(--icon);
+  height: fit-content;
+}

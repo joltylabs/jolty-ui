@@ -1,0 +1,29 @@
+:where(:root),
+::backdrop {
+  --animation-fade-in: fade-in var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-fade-out: fade-out var(--duration-3, 200) var(--ease-3, ease-out);
+}
+
+/* if @property is not supported */
+@supports not (((height: 1lh) and (animation-timeline: none)) or ((height: 1lh) and (margin-trim: none))) {
+  * {
+    --fade-size: unset;
+  }
+}
+
+@property --fade-size {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: var(--fade-size, 0);
+  }
+}
+@keyframes fade-out {
+  to {
+    opacity: var(--fade-size, 0);
+  }
+}

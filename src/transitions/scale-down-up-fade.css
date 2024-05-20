@@ -1,0 +1,6 @@
+.scale-down-up-fade-enter-active {
+  animation: var(--animation-scale-in-down), var(--animation-fade-in);
+}
+.scale-down-up-fade-leave-active {
+  animation: var(--animation-scale-out-up), var(--animation-fade-out);
+}

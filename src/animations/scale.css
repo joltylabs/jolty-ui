@@ -1,0 +1,54 @@
+:where(:root),
+::backdrop {
+  --animation-scale-out-up: scale-out-up var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-scale-out-down: scale-out-down var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-scale-in-up: scale-in-up var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-scale-in-down: scale-in-down var(--duration-3, 200) var(--ease-3, ease-out);
+}
+
+/* if @property is not supported */
+@supports not (((height: 1lh) and (animation-timeline: none)) or ((height: 1lh) and (margin-trim: none))) {
+  * {
+    --scale-size: unset;
+    --scale-in-size: unset;
+    --scale-out-size: unset;
+  }
+}
+
+@property --scale-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+}
+@property --scale-in-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+}
+@property --scale-out-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+}
+
+@keyframes scale-in-up {
+  from {
+    animation-composition: add;
+    scale: var(--scale-in-size, var(--scale-size, 0.95));
+  }
+}
+@keyframes scale-in-down {
+  from {
+    animation-composition: add;
+    scale: var(--scale-in-size, var(--scale-size, 1.05));
+  }
+}
+@keyframes scale-out-up {
+  to {
+    animation-composition: add;
+    scale: var(--scale-out-size, var(--scale-size, 1.05));
+  }
+}
+@keyframes scale-out-down {
+  to {
+    animation-composition: add;
+    scale: var(--scale-out-size, var(--scale-size, 0.95));
+  }
+}

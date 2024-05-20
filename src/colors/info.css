@@ -1,0 +1,57 @@
+:where(:root) {
+  --info-hue: 250;
+}
+:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+  --info-1: oklch(0.9742 0.012 var(--info-hue));
+  --info-2: oklch(0.9612 0.021 var(--info-hue));
+  --info-3: oklch(0.9377 0.034 var(--info-hue));
+  --info-4: oklch(0.9063 0.054 var(--info-hue));
+  --info-5: oklch(0.8764 0.071 var(--info-hue));
+  --info-6: oklch(0.835 0.095 var(--info-hue));
+  --info-7: oklch(0.7862 0.126 var(--info-hue));
+  --info-8: oklch(0.7367 0.155 var(--info-hue));
+  --info-9: oklch(0.541 0.198 var(--info-hue));
+  --info-10: oklch(0.5102 0.189 var(--info-hue));
+  --info-11: oklch(0.4811 0.152 var(--info-hue));
+  --info-12: oklch(0.3712 0.099 var(--info-hue));
+
+  --info-a1: oklch(0.65 0.22 var(--info-hue) / 0.06);
+  --info-a2: oklch(0.65 0.22 var(--info-hue) / 0.1);
+  --info-a3: oklch(0.65 0.22 var(--info-hue) / 0.16);
+  --info-a4: oklch(0.65 0.22 var(--info-hue) / 0.24);
+  --info-a5: oklch(0.65 0.22 var(--info-hue) / 0.32);
+  --info-a6: oklch(0.65 0.22 var(--info-hue) / 0.42);
+  --info-a7: oklch(0.65 0.22 var(--info-hue) / 0.56);
+  --info-a8: oklch(0.65 0.22 var(--info-hue) / 0.7);
+  --info-a9: oklch(0.54 0.2 var(--info-hue));
+  --info-a10: oklch(0.51 0.19 var(--info-hue));
+  --info-a11: oklch(0.4 0.18 var(--info-hue) / 0.86);
+  --info-a12: oklch(0.3 0.11 var(--info-hue) / 0.9);
+}
+:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+  --info-1: oklch(22.5% 0.033 var(--info-hue));
+  --info-2: oklch(25.49% 0.051 var(--info-hue));
+  --info-3: oklch(29.33% 0.071 var(--info-hue));
+  --info-4: oklch(32.5% 0.085 var(--info-hue));
+  --info-5: oklch(35.38% 0.099 var(--info-hue));
+  --info-6: oklch(40.38% 0.119 var(--info-hue));
+  --info-7: oklch(45.4% 0.138 var(--info-hue));
+  --info-8: oklch(49.54% 0.16 var(--info-hue));
+  --info-9: oklch(56.19% 0.201 var(--info-hue));
+  --info-10: oklch(60.45% 0.192 var(--info-hue));
+  --info-11: oklch(81.08% 0.106 var(--info-hue));
+  --info-12: oklch(92.23% 0.043 var(--info-hue));
+
+  --info-a1: oklch(0.65 0.22 var(--info-hue) / 0.1);
+  --info-a2: oklch(0.65 0.22 var(--info-hue) / 0.16);
+  --info-a3: oklch(0.65 0.22 var(--info-hue) / 0.24);
+  --info-a4: oklch(0.65 0.22 var(--info-hue) / 0.3);
+  --info-a5: oklch(0.65 0.22 var(--info-hue) / 0.36);
+  --info-a6: oklch(0.65 0.22 var(--info-hue) / 0.46);
+  --info-a7: oklch(0.65 0.22 var(--info-hue) / 0.56);
+  --info-a8: oklch(0.65 0.22 var(--info-hue) / 0.66);
+  --info-a9: oklch(0.6 0.22 var(--info-hue) / 0.9);
+  --info-a10: oklch(0.65 0.21 var(--info-hue) / 0.9);
+  --info-a11: oklch(0.9 0.12 var(--info-hue) / 0.86);
+  --info-a12: oklch(0.94 0.05 var(--info-hue) / 0.98);
+}

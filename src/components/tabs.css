@@ -1,0 +1,49 @@
+.tabs {
+  --ui-tabs-bg: var(--gray-0);
+  --ui-tabs-height: var(--size-lg);
+  --ui-tabs-border-width: var(--ui-border-width);
+  --ui-tabs-border-style: var(--ui-border-style);
+  --ui-tabs-border-color: var(--ui-border-color);
+  --ui-tabs-border-radius: var(--radius);
+  --ui-tabs-padding: 0.25rem;
+
+  --ui-tab-font-size: var(--text-sm);
+  --ui-tab-font-weight: 500;
+  --ui-tab-color: var(--gray-11);
+  --ui-tab-hover-color: var(--gray-12);
+  --ui-tab-current-color: var(--gray-12);
+  --ui-tab-current-bg: var(--gray-2);
+  --ui-tab-padding: 0 1rem;
+  --ui-tab-border-radius: calc(var(--radius) - 0.25rem);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  padding: var(--ui-tabs-padding);
+  border: var(--ui-tabs-border-width) var(--ui-tabs-border-style) var(--ui-tabs-border-color);
+  border-radius: var(--ui-tabs-border-radius);
+  background-color: var(--ui-tabs-bg);
+  height: var(--ui-tabs-height);
+}
+
+.tabs-tab {
+  flex-grow: 1;
+  position: relative;
+  font-weight: var(--ui-tab-font-weight);
+  font-size: var(--ui-tab-font-size);
+  padding: var(--ui-tab-padding);
+  color: var(--ui-tab-color);
+  transition-duration: var(--duration-1);
+  transition-property: var(--transition-property);
+  transition-timing-function: var(--ease-3);
+  border-radius: var(--ui-tab-border-radius);
+  &:hover {
+    color: var(--ui-tab-hover-color);
+  }
+}
+.tabs-tab.ui-active {
+  background-color: var(--ui-tab-current-bg);
+  color: var(--ui-tab-current-color);
+  pointer-events: none;
+}

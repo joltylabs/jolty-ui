@@ -1,0 +1,6 @@
+.collapse-enter-active {
+  animation: var(--animation-collapse-in);
+}
+.collapse-leave-active {
+  animation: var(--animation-collapse-out);
+}

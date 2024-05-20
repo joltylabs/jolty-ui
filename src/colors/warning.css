@@ -1,0 +1,57 @@
+:where(:root) {
+  --warning-hue: 70;
+}
+:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+  --warning-1: oklch(0.9783 0.012 var(--warning-hue));
+  --warning-2: oklch(0.9624 0.021 var(--warning-hue));
+  --warning-3: oklch(0.9426 0.034 var(--warning-hue));
+  --warning-4: oklch(0.9119 0.049 var(--warning-hue));
+  --warning-5: oklch(0.8814 0.067 var(--warning-hue));
+  --warning-6: oklch(0.8526 0.083 var(--warning-hue));
+  --warning-7: oklch(0.8204 0.104 var(--warning-hue));
+  --warning-8: oklch(0.783 0.124 var(--warning-hue));
+  --warning-9: oklch(0.8464 0.179 var(--warning-hue));
+  --warning-10: oklch(0.8168 0.18 var(--warning-hue));
+  --warning-11: oklch(0.53 0.2 var(--warning-hue));
+  --warning-12: oklch(0.38 0.14 var(--warning-hue));
+
+  --warning-a1: oklch(0.65 0.2 var(--warning-hue) / 0.06);
+  --warning-a2: oklch(0.65 0.2 var(--warning-hue) / 0.1);
+  --warning-a3: oklch(0.65 0.2 var(--warning-hue) / 0.16);
+  --warning-a4: oklch(0.65 0.2 var(--warning-hue) / 0.24);
+  --warning-a5: oklch(0.65 0.2 var(--warning-hue) / 0.32);
+  --warning-a6: oklch(0.65 0.2 var(--warning-hue) / 0.4);
+  --warning-a7: oklch(0.65 0.2 var(--warning-hue) / 0.5);
+  --warning-a8: oklch(0.65 0.2 var(--warning-hue) / 0.6);
+  --warning-a9: oklch(0.85 0.2 var(--warning-hue) / 0.9);
+  --warning-a10: oklch(0.8 0.19 var(--warning-hue) / 0.9);
+  --warning-a11: oklch(0.49 0.23 var(--warning-hue) / 0.86);
+  --warning-a12: oklch(0.34 0.154 var(--warning-hue) / 0.9);
+}
+:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+  --warning-1: oklch(0.2273 0.027 var(--warning-hue));
+  --warning-2: oklch(0.2557 0.041 var(--warning-hue));
+  --warning-3: oklch(0.2989 0.059 var(--warning-hue));
+  --warning-4: oklch(0.3287 0.07 var(--warning-hue));
+  --warning-5: oklch(0.3579 0.081 var(--warning-hue));
+  --warning-6: oklch(0.4053 0.095 var(--warning-hue));
+  --warning-7: oklch(0.4546 0.111 var(--warning-hue));
+  --warning-8: oklch(0.5013 0.125 var(--warning-hue));
+  --warning-9: oklch(0.8315 0.172 var(--warning-hue));
+  --warning-10: oklch(0.8641 0.154 var(--warning-hue));
+  --warning-11: oklch(0.81 0.114 var(--warning-hue));
+  --warning-12: oklch(0.946 0.049 var(--warning-hue));
+
+  --warning-a1: oklch(0.65 0.19 var(--warning-hue) / 0.1);
+  --warning-a2: oklch(0.65 0.19 var(--warning-hue) / 0.16);
+  --warning-a3: oklch(0.65 0.19 var(--warning-hue) / 0.24);
+  --warning-a4: oklch(0.65 0.19 var(--warning-hue) / 0.3);
+  --warning-a5: oklch(0.65 0.19 var(--warning-hue) / 0.36);
+  --warning-a6: oklch(0.65 0.19 var(--warning-hue) / 0.46);
+  --warning-a7: oklch(0.65 0.19 var(--warning-hue) / 0.56);
+  --warning-a8: oklch(0.65 0.19 var(--warning-hue) / 0.66);
+  --warning-a9: oklch(0.9 0.19 var(--warning-hue) / 0.9);
+  --warning-a10: oklch(0.95 0.18 var(--warning-hue) / 0.9);
+  --warning-a11: oklch(0.9 0.13 var(--warning-hue) / 0.86);
+  --warning-a12: oklch(0.96 0.05 var(--warning-hue) / 0.98);
+}

@@ -1,0 +1,68 @@
+:where(:root),
+::backdrop {
+  --animation-collapse-in: collapse-in var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-collapse-out: collapse-out var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-collapse-width-in: collapse-width-in var(--duration-3, 200) var(--ease-3, ease-out);
+  --animation-collapse-width-out: collapse-width-out var(--duration-3, 200) var(--ease-3, ease-out);
+}
+
+/* if @property is not supported */
+@supports not (((height: 1lh) and (animation-timeline: none)) or ((height: 1lh) and (margin-trim: none))) {
+  * {
+    --collapse-size: unset;
+    --collapse-width-size: unset;
+  }
+}
+
+@property --collapse-size {
+  syntax: "<length-percentage>";
+  inherits: false;
+}
+@property --collapse-width-size {
+  syntax: "<length-percentage>";
+  inherits: false;
+}
+
+@keyframes collapse-in {
+  from {
+    height: var(--collapse-size, 0);
+    overflow: hidden;
+  }
+  to {
+    height: var(--ui-transition-height);
+    overflow: hidden;
+  }
+}
+
+@keyframes collapse-out {
+  from {
+    height: var(--ui-transition-height);
+    overflow: hidden;
+  }
+  to {
+    height: var(--collapse-size, 0);
+    overflow: hidden;
+  }
+}
+
+@keyframes collapse-width-in {
+  from {
+    width: var(--collapse-width-size, 0);
+    overflow: hidden;
+  }
+  to {
+    width: var(--ui-transition-width);
+    overflow: hidden;
+  }
+}
+
+@keyframes collapse-width-out {
+  from {
+    width: var(--ui-transition-width);
+    overflow: hidden;
+  }
+  to {
+    width: var(--collapse-width-size, 0);
+    overflow: hidden;
+  }
+}

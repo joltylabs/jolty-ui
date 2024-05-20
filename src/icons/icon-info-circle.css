@@ -1,0 +1,6 @@
+:root {
+  --icon-info-circle: url("data:image/svg+xml,%3Csvg width%3D%2224%22 height%3D%2224%22 viewBox%3D%220 0 24 24%22 fill%3D%22none%22 stroke%3D%22currentColor%22 stroke-width%3D%221.5%22 stroke-linecap%3D%22round%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E  %3Cpath d%3D%22M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z%22 %2F%3E  %3Ccircle cx%3D%2212%22 cy%3D%227.6001%22 r%3D%221%22 fill%3D%22currentColor%22 stroke%3D%22none%22%2F%3E  %3Cpath d%3D%22M12.0498 10.95L12.0498 16.95%22 %2F%3E  %3Cline x1%3D%2210.0498%22 y1%3D%2210.9287%22 x2%3D%2212.0078%22 y2%3D%2210.9287%22 %2F%3E  %3Cline x1%3D%2210.0498%22 y1%3D%2216.9692%22 x2%3D%2213.9498%22 y2%3D%2216.9692%22 %2F%3E%3C%2Fsvg%3E");
+}
+.icon--info-circle {
+  --icon: var(--icon-info-circle);
+}

@@ -1,0 +1,125 @@
+:where(:root),
+::backdrop {
+  --gray-hue: 267;
+
+  --gray-darkest-oklch: 0.16 0.005 var(--gray-hue);
+  --gray-darkest: oklch(var(--gray-darkest-oklch));
+
+  --gray-a1-light: oklch(0.16 0.04 var(--gray-hue) / 0.03);
+  --gray-a2-light: oklch(0.16 0.04 var(--gray-hue) / 0.06);
+  --gray-a3-light: oklch(0.16 0.04 var(--gray-hue) / 0.09);
+  --gray-a4-light: oklch(0.16 0.04 var(--gray-hue) / 0.11);
+  --gray-a5-light: oklch(0.16 0.04 var(--gray-hue) / 0.14);
+  --gray-a6-light: oklch(0.16 0.04 var(--gray-hue) / 0.21);
+  --gray-a7-light: oklch(0.16 0.04 var(--gray-hue) / 0.27);
+  --gray-a8-light: oklch(0.16 0.04 var(--gray-hue) / 0.33);
+  --gray-a9-light: oklch(0.16 0.04 var(--gray-hue) / 0.7);
+  --gray-a10-light: oklch(0.16 0.04 var(--gray-hue) / 0.74);
+  --gray-a11-light: oklch(0.16 0.04 var(--gray-hue) / 0.65);
+  --gray-a12-light: oklch(0.16 0.016 var(--gray-hue) / 0.9);
+
+  --gray-0-light: oklch(1 0 var(--gray-hue));
+  --gray-1-light: oklch(0.97 0.001 var(--gray-hue));
+  --gray-2-light: oklch(0.955 0.002 var(--gray-hue));
+  --gray-3-light: oklch(0.93 0.003 var(--gray-hue));
+  --gray-4-light: oklch(0.91 0.003 var(--gray-hue));
+  --gray-5-light: oklch(0.89 0.004 var(--gray-hue));
+  --gray-6-light: oklch(0.84 0.007 var(--gray-hue));
+  --gray-7-light: oklch(0.793 0.008 var(--gray-hue));
+  --gray-8-light: oklch(0.75 0.01 var(--gray-hue));
+  --gray-9-light: oklch(0.45 0.02 var(--gray-hue));
+  --gray-10-light: oklch(0.415 0.022 var(--gray-hue));
+  --gray-11-light: oklch(0.49 0.02 var(--gray-hue));
+  --gray-12-light: oklch(0.27 0.013 var(--gray-hue));
+
+  --gray-a1-dark: oklch(0.98 0.084 var(--gray-hue) / 0.04);
+  --gray-a2-dark: oklch(0.98 0.072 var(--gray-hue) / 0.06);
+  --gray-a3-dark: oklch(0.98 0.06 var(--gray-hue) / 0.1);
+  --gray-a4-dark: oklch(0.98 0.06 var(--gray-hue) / 0.13);
+  --gray-a5-dark: oklch(0.98 0.06 var(--gray-hue) / 0.16);
+  --gray-a6-dark: oklch(0.98 0.056 var(--gray-hue) / 0.2);
+  --gray-a7-dark: oklch(0.98 0.052 var(--gray-hue) / 0.26);
+  --gray-a8-dark: oklch(0.98 0.048 var(--gray-hue) / 0.32);
+  --gray-a9-dark: oklch(0.98 0.04 var(--gray-hue) / 0.38);
+  --gray-a10-dark: oklch(0.98 0.04 var(--gray-hue) / 0.42);
+  --gray-a11-dark: oklch(0.98 0.02 var(--gray-hue) / 0.65);
+  --gray-a12-dark: oklch(0.98 0.004 var(--gray-hue) / 0.98);
+
+  --gray-0-dark: oklch(0.17 0.001 var(--gray-hue));
+  --gray-1-dark: oklch(0.21 0.006 var(--gray-hue));
+  --gray-2-dark: oklch(0.23 0.01 var(--gray-hue));
+  --gray-3-dark: oklch(0.27 0.012 var(--gray-hue));
+  --gray-4-dark: oklch(0.3 0.013 var(--gray-hue));
+  --gray-5-dark: oklch(0.33 0.013 var(--gray-hue));
+  --gray-6-dark: oklch(0.36 0.016 var(--gray-hue));
+  --gray-7-dark: oklch(0.41 0.019 var(--gray-hue));
+  --gray-8-dark: oklch(0.46 0.02 var(--gray-hue));
+  --gray-9-dark: oklch(0.51 0.02 var(--gray-hue));
+  --gray-10-dark: oklch(0.55 0.02 var(--gray-hue));
+  --gray-11-dark: oklch(0.73 0.016 var(--gray-hue));
+  --gray-12-dark: oklch(0.96 0.004 var(--gray-hue));
+}
+:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+  &,
+  &::backdrop,
+  ::backdrop {
+    --gray-0: var(--gray-0-light);
+    --gray-1: var(--gray-1-light);
+    --gray-2: var(--gray-2-light);
+    --gray-3: var(--gray-3-light);
+    --gray-4: var(--gray-4-light);
+    --gray-5: var(--gray-5-light);
+    --gray-6: var(--gray-6-light);
+    --gray-7: var(--gray-7-light);
+    --gray-8: var(--gray-8-light);
+    --gray-9: var(--gray-9-light);
+    --gray-10: var(--gray-10-light);
+    --gray-11: var(--gray-11-light);
+    --gray-12: var(--gray-12-light);
+
+    --gray-a1: var(--gray-a1-light);
+    --gray-a2: var(--gray-a2-light);
+    --gray-a3: var(--gray-a3-light);
+    --gray-a4: var(--gray-a4-light);
+    --gray-a5: var(--gray-a5-light);
+    --gray-a6: var(--gray-a6-light);
+    --gray-a7: var(--gray-a7-light);
+    --gray-a8: var(--gray-a8-light);
+    --gray-a9: var(--gray-a9-light);
+    --gray-a10: var(--gray-a10-light);
+    --gray-a11: var(--gray-a11-light);
+    --gray-a12: var(--gray-a12-light);
+  }
+}
+:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+  &,
+  &::backdrop,
+  ::backdrop {
+    --gray-a1: var(--gray-a1-dark);
+    --gray-a2: var(--gray-a2-dark);
+    --gray-a3: var(--gray-a3-dark);
+    --gray-a4: var(--gray-a4-dark);
+    --gray-a5: var(--gray-a5-dark);
+    --gray-a6: var(--gray-a6-dark);
+    --gray-a7: var(--gray-a7-dark);
+    --gray-a8: var(--gray-a8-dark);
+    --gray-a9: var(--gray-a9-dark);
+    --gray-a10: var(--gray-a10-dark);
+    --gray-a11: var(--gray-a11-dark);
+    --gray-a12: var(--gray-a12-dark);
+
+    --gray-0: var(--gray-0-dark);
+    --gray-1: var(--gray-1-dark);
+    --gray-2: var(--gray-2-dark);
+    --gray-3: var(--gray-3-dark);
+    --gray-4: var(--gray-4-dark);
+    --gray-5: var(--gray-5-dark);
+    --gray-6: var(--gray-6-dark);
+    --gray-7: var(--gray-7-dark);
+    --gray-8: var(--gray-8-dark);
+    --gray-9: var(--gray-9-dark);
+    --gray-10: var(--gray-10-dark);
+    --gray-11: var(--gray-11-dark);
+    --gray-12: var(--gray-12-dark);
+  }
+}

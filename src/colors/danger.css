@@ -1,0 +1,58 @@
+:where(:root) {
+  --danger-hue: 27;
+}
+:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+  --danger-1: oklch(0.97 0.01 var(--danger-hue));
+  --danger-2: oklch(0.96 0.02 var(--danger-hue));
+  --danger-3: oklch(0.94 0.03 var(--danger-hue));
+  --danger-4: oklch(0.91 0.04 var(--danger-hue));
+  --danger-5: oklch(0.88 0.06 var(--danger-hue));
+  --danger-6: oklch(0.85 0.08 var(--danger-hue));
+  --danger-7: oklch(0.81 0.1 var(--danger-hue));
+  --danger-8: oklch(0.78 0.12 var(--danger-hue));
+  --danger-9: oklch(0.54 0.19 var(--danger-hue));
+  --danger-10: oklch(0.5 0.18 var(--danger-hue));
+  --danger-11: oklch(0.49 0.15 var(--danger-hue));
+  --danger-12: oklch(0.37 0.1 var(--danger-hue));
+
+  --danger-a1: oklch(0.65 0.2 var(--danger-hue) / 0.06);
+  --danger-a2: oklch(0.65 0.2 var(--danger-hue) / 0.1);
+  --danger-a3: oklch(0.65 0.2 var(--danger-hue) / 0.16);
+  --danger-a4: oklch(0.65 0.2 var(--danger-hue) / 0.24);
+  --danger-a5: oklch(0.65 0.2 var(--danger-hue) / 0.32);
+  --danger-a6: oklch(0.65 0.2 var(--danger-hue) / 0.4);
+  --danger-a7: oklch(0.65 0.2 var(--danger-hue) / 0.5);
+  --danger-a8: oklch(0.65 0.2 var(--danger-hue) / 0.6);
+  --danger-a9: oklch(0.5 0.2 var(--danger-hue) / 0.9);
+  --danger-a10: oklch(0.46 0.19 var(--danger-hue) / 0.9);
+  --danger-a11: oklch(0.42 0.17 var(--danger-hue) / 0.86);
+  --danger-a12: oklch(0.3 0.11 var(--danger-hue) / 0.9);
+}
+
+:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+  --danger-a1: oklch(0.65 0.2 var(--danger-hue) / 0.1);
+  --danger-a2: oklch(0.65 0.2 var(--danger-hue) / 0.14);
+  --danger-a3: oklch(0.65 0.2 var(--danger-hue) / 0.22);
+  --danger-a4: oklch(0.65 0.2 var(--danger-hue) / 0.28);
+  --danger-a5: oklch(0.65 0.2 var(--danger-hue) / 0.34);
+  --danger-a6: oklch(0.65 0.2 var(--danger-hue) / 0.44);
+  --danger-a7: oklch(0.65 0.2 var(--danger-hue) / 0.54);
+  --danger-a8: oklch(0.65 0.2 var(--danger-hue) / 0.64);
+  --danger-a9: oklch(0.6 0.2 var(--danger-hue) / 0.9);
+  --danger-a10: oklch(0.65 0.2 var(--danger-hue) / 0.9);
+  --danger-a11: oklch(0.9 0.12 var(--danger-hue) / 0.86);
+  --danger-a12: oklch(0.94 0.05 var(--danger-hue) / 0.98);
+
+  --danger-1: oklch(0.22 0.03 var(--danger-hue));
+  --danger-2: oklch(0.24 0.04 var(--danger-hue));
+  --danger-3: oklch(0.29 0.06 var(--danger-hue));
+  --danger-4: oklch(0.31 0.07 var(--danger-hue));
+  --danger-5: oklch(0.35 0.08 var(--danger-hue));
+  --danger-6: oklch(0.39 0.1 var(--danger-hue));
+  --danger-7: oklch(0.44 0.12 var(--danger-hue));
+  --danger-8: oklch(0.49 0.14 var(--danger-hue));
+  --danger-9: oklch(0.56 0.18 var(--danger-hue));
+  --danger-10: oklch(0.61 0.18 var(--danger-hue));
+  --danger-11: oklch(0.81 0.11 var(--danger-hue));
+  --danger-12: oklch(0.92 0.044 var(--danger-hue));
+}

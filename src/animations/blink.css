@@ -1,0 +1,27 @@
+:where(:root),
+::backdrop {
+  --animation-blink: blink 1s var(--ease-out-3, ease-out) infinite;
+}
+
+/* if @property is not supported */
+@supports not (((height: 1lh) and (animation-timeline: none)) or ((height: 1lh) and (margin-trim: none))) {
+  * {
+    --blink-size: unset;
+  }
+}
+
+@property --blink-size {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: var(--blink-size, 0.25);
+  }
+}

@@ -1,0 +1,25 @@
+:where(:root),
+::backdrop {
+  --animation-ping: ping 5s var(--ease-out-3, ease-out) infinite;
+}
+
+/* if @property is not supported */
+@supports not (((height: 1lh) and (animation-timeline: none)) or ((height: 1lh) and (margin-trim: none))) {
+  * {
+    --ping-size: unset;
+  }
+}
+
+@property --ping-size {
+  syntax: "<number> || <percentage>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes ping {
+  90%,
+  to {
+    scale: var(--ping-size, 2);
+    opacity: 0;
+  }
+}

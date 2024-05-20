@@ -1,0 +1,206 @@
+.popover {
+  --ui-popover-color: var(--ui-panel-color);
+  --ui-popover-bg: var(--ui-panel-bg);
+  --ui-popover-border-style: var(--ui-panel-border-style);
+  --ui-popover-border-width: var(--ui-panel-border-width);
+  --ui-popover-border-color: var(--ui-panel-border-color);
+  --ui-popover-outline: var(--ui-panel-outline);
+  --ui-popover-outline-offset: var(--ui-panel-outline-offset);
+
+  --ui-popover-shadow: var(--shadow-lg);
+
+  --ui-popover-padding-x: 1.5rem;
+  --ui-popover-padding-y: 1.25rem;
+
+  --ui-popover-size: max-content;
+  --ui-popover-size-sm: 20rem;
+  --ui-popover-size-md: 25rem;
+  --ui-popover-size-lg: 30rem;
+
+  --ui-popover-border-radius: var(--radius);
+
+  --ui-popover-boundary-offset-top: var(--ui-boundary-offset-top);
+  --ui-popover-boundary-offset-end: var(--ui-boundary-offset-end);
+  --ui-popover-boundary-offset-bottom: var(--ui-boundary-offset-bottom);
+  --ui-popover-boundary-offset-start: var(--ui-boundary-offset-start);
+
+  --ui-popover-flip: 1;
+  --ui-popover-sticky: 1;
+  --ui-popover-shrink: 1;
+  --ui-popover-offset: 0.75rem;
+  --ui-popover-arrow-width: 0.75rem;
+  --ui-popover-arrow-height: 0.75rem;
+
+  --ui-popover-title-font-size: var(--text-md);
+  --ui-popover-title-font-weight: 600;
+  --ui-popover-title-margin-bottom: 0.25rem;
+
+  --ui-popover-description-font-size: var(--text-sm);
+
+  --ui-popover-btns-margin-top: 1rem;
+  --ui-popover-btns-gap: 0.5rem;
+
+  --ui-popover-header-gap: 0.75rem;
+  --ui-popover-header-padding-bottom: 0.25rem;
+  --ui-popover-footer-padding-top: 1rem;
+
+  --ui-popover-close-offset-top: 0.75rem;
+  --ui-popover-close-offset-end: 0.75rem;
+
+  --ui-popover-slide-size: 2rem;
+  --ui-popover-drawer-slide-size: 50%;
+
+  --ui-popover-transition-duration: var(--duration-2);
+  &::backdrop {
+    --ui-popover-backdrop-bg: var(--ui-backdrop-bg);
+    --ui-popover-backdrop-light-bg: var(--ui-backdrop-light-bg);
+    --ui-popover-backdrop-transition: opacity var(--ui-popover-transition-duration) var(--ease-3);
+  }
+}
+
+.popover {
+  --ui-popover-boundary-offset: var(--ui-popover-boundary-offset-top) var(--ui-popover-boundary-offset-end)
+    var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
+  background-color: var(--ui-popover-bg);
+  border-style: var(--ui-popover-border-style);
+  border-color: var(--ui-popover-border-color);
+  border-width: var(--ui-popover-border-width);
+  border-radius: var(--radius);
+  padding: var(--ui-popover-padding-y) var(--ui-popover-padding-x);
+  width: var(--ui-popover-size);
+  color: var(--ui-popover-color);
+  box-shadow: var(--ui-popover-shadow);
+  &:focus-visible {
+    outline: var(--ui-popover-outline);
+    outline-offset: var(--ui-popover-outline-offset);
+  }
+  &:where(:not(.ui-modal))::backdrop {
+    background: var(--ui-popover-backdrop-light-bg);
+  }
+  &:where(.popover--no-backdrop)::backdrop {
+    display: none;
+  }
+  &:where(:has(> .popover-body)) {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  &::after {
+    width: var(--ui-popover-arrow-width);
+    height: var(--ui-popover-arrow-height);
+    border: var(--ui-popover-border-width) var(--ui-popover-border-style) var(--ui-popover-border-color);
+  }
+}
+
+.popover-header {
+  padding: var(--ui-popover-padding-y) var(--ui-popover-padding-x) var(--ui-popover-header-padding-bottom);
+  display: flex;
+  align-items: center;
+  gap: var(--ui-popover-header-gap);
+}
+.popover-footer {
+  padding: var(--ui-popover-footer-padding-top) var(--ui-popover-padding-x) var(--ui-popover-padding-y);
+  & :where(.popover-btns) {
+    margin-top: 0;
+  }
+}
+.popover-body {
+  padding: var(--ui-popover-padding-y) var(--ui-popover-padding-x);
+  overflow: auto;
+  flex-grow: 1;
+  position: relative;
+  &:where(.popover-header ~ *) {
+    padding-top: 0;
+  }
+  &:where(:has(~ .popover-footer)) {
+    padding-bottom: 0;
+  }
+}
+.popover-close {
+  position: absolute;
+  top: var(--ui-popover-close-offset-top);
+  inset-inline-end: var(--ui-popover-close-offset-end);
+}
+.popover-title {
+  font-weight: var(--ui-popover-title-font-weight);
+  font-size: var(--ui-popover-title-font-size);
+  margin-bottom: var(--ui-popover-title-margin-bottom);
+}
+
+.popover-description {
+  font-size: var(--ui-popover-description-font-size);
+}
+
+.popover-btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: var(--ui-popover-btns-margin-top);
+  gap: var(--ui-popover-btns-gap);
+}
+
+.popover-footer {
+  padding: var(--ui-popover-footer-padding-top) var(--ui-popover-padding-x) var(--ui-popover-padding-y);
+  & :where(.popover-btns) {
+    margin-top: 0;
+  }
+}
+
+:where(.popover-header) {
+  & .popover-title {
+    margin-bottom: 0;
+  }
+  & .popover-close {
+    &:where(:last-child) {
+      position: relative;
+      inset: auto;
+      margin-inline-start: auto;
+    }
+    &:where(:first-child) {
+      position: relative;
+      inset: auto;
+    }
+  }
+}
+
+.popover:where([data-ui-current-placement="dialog"]) {
+  inset: var(--ui-popover-boundary-offset-top) var(--ui-popover-boundary-offset-end)
+    var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
+  max-height: calc(100% - var(--ui-popover-boundary-offset-top) - var(--ui-popover-boundary-offset-bottom));
+}
+
+.popover::backdrop {
+  background-color: var(--ui-popover-backdrop-light-bg);
+}
+.popover.ui-modal::backdrop {
+  background-color: var(--ui-popover-backdrop-bg);
+}
+
+.popover:where(.ui-light-dismiss-prevent, .ui-back-dismiss-prevent) {
+  animation: backdropPreventHide var(--duration-3) var(--ease-3);
+  animation-direction: alternate;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .popover::backdrop {
+    transition: var(--ui-popover-backdrop-transition);
+  }
+  .popover.ui-enter-active {
+    animation: var(--animation-fade-in), var(--animation-scale-in-up);
+    animation-duration: var(--ui-popover-transition-duration);
+  }
+  .popover.ui-leave-active {
+    animation: var(--animation-fade-out), var(--animation-scale-out-down);
+    animation-duration: var(--ui-popover-transition-duration);
+  }
+}
+
+.popover--sm {
+  --ui-popover-size: var(--ui-popover-size-sm);
+}
+.popover--md {
+  --ui-popover-size: var(--ui-popover-size-md);
+}
+.popover--lg {
+  --ui-popover-size: var(--ui-popover-size-lg);
+}

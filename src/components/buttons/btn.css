@@ -1,0 +1,80 @@
+.btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none;
+  height: var(--ui-btn-size);
+  min-width: var(--ui-btn-size);
+  padding-left: var(--ui-btn-padding);
+  padding-right: var(--ui-btn-padding);
+  border-radius: var(--ui-btn-radius);
+  background: var(--ui-btn-bg);
+  color: var(--ui-btn-color);
+  font-weight: var(--ui-btn-font-weight, 500);
+  border: var(--ui-btn-border-width) var(--ui-btn-border-style) var(--ui-btn-border-color);
+  transition-duration: var(--duration-1);
+  transition-property: var(--transition-property);
+  transition-timing-function: var(--ease-3);
+  gap: var(--ui-btn-gap, 0.375em);
+  outline: var(--ui-btn-outline-width, 2px) solid transparent;
+  outline-offset: var(--ui-btn-outline-offset, 2px);
+  &:hover {
+    background-color: var(--ui-btn-bg-hover);
+    border-color: var(--ui-btn-border-color-hover, var(--ui-btn-border-color));
+    color: var(--ui-btn-color-hover, var(--ui-btn-color));
+  }
+  &:focus-visible {
+    outline-color: var(--ui-btn-outline-color, var(--ui-btn-bg));
+  }
+}
+
+.btn--outline,
+.btn--surface {
+  border-width: 1px;
+}
+
+.btn--xs {
+  --ui-btn-size: var(--size-xs);
+  --ui-btn-padding: 0.5rem;
+  --ui-btn-radius: var(--radius-xs);
+  font-size: var(--text-xs);
+}
+.btn--sm {
+  --ui-btn-size: var(--size-sm);
+  --ui-btn-padding: 0.625rem;
+  --ui-btn-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+.btn--md {
+  --ui-btn-size: var(--size-md);
+  --ui-btn-padding: 0.75rem;
+  --ui-btn-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+.btn--lg {
+  --ui-btn-size: var(--size-lg);
+  --ui-btn-padding: 1.125rem;
+  --ui-btn-radius: var(--radius);
+  font-size: var(--text-md);
+}
+.btn--xl {
+  --ui-btn-size: var(--size-xl);
+  --ui-btn-padding: 1.625rem;
+  --ui-btn-radius: var(--radius);
+  font-size: var(--text-md);
+}
+
+.btn :where(.icon) {
+  width: 1.25rem;
+  margin: 0 -0.125em;
+}
+
+.btn--icon {
+  padding: 0;
+}
+.btn--icon :where(.icon) {
+  width: 80%;
+  margin: 0;
+}
