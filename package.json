@@ -11,17 +11,20 @@
     "url": "git+https://github.com/joltylabs/jolty-ui.git"
   },
   "homepage": "https://github.com/joltylabs/jolty-ui#readme",
+  "scripts": {
+    "build": "node build.cjs",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "cssnano": "^7.0.1",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0"
   },
-  "scripts": {
-    "build": "node build.cjs"
-  },
   "dependencies": {
-    "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-merge-rules": "^7.0.0",
     "postcss-nested": "^6.0.1",
     "prettier": "^3.2.5"
