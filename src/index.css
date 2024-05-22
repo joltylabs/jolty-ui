@@ -5,6 +5,8 @@
 @import './animations/all.css';
 @import './transitions/all.css';
 
+@import './theme.css';
+
 @import './icons/icon.css';
 @import './icons/icon-check.css';
 @import './icons/icon-check-circle.css';
@@ -26,5 +28,3 @@
 @import './components/tabs.css';
 @import './components/checkbox.css';
 @import './components/alert.css';
-
-@import './theme.css';

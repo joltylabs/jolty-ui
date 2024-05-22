@@ -5,7 +5,6 @@ const cssnano = require('cssnano');
 const postcssImport = require('postcss-import');
 const postcssNested = require('postcss-nested');
 const postcssMergeRules = require('postcss-merge-rules');
-const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
 
 
 const inputDir = './src';
@@ -22,7 +21,6 @@ const processCSS = async () => {
     postcssImport(),
     postcssNested(),
     postcssMergeRules(),
-    combineDuplicatedSelectors({ removeDuplicatedProperties: true })
   ]);
 
   // Process for unminified version with source map
@@ -39,7 +37,6 @@ const processCSS = async () => {
     postcssImport(),
     postcssNested(),
     postcssMergeRules(),
-    combineDuplicatedSelectors({ removeDuplicatedProperties: true }),
     cssnano({
       preset: ['default', {
         mergeRules: true,
