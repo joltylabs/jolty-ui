@@ -1,6 +1,6 @@
 .btn--danger {
-  --ui-btn-bg: var(--danger-a9);
-  --ui-btn-bg-hover: var(--danger-a10);
+  --ui-btn-bg: var(--danger-9);
+  --ui-btn-bg-hover: var(--danger-10);
   --ui-btn-outline-color: var(--danger-a9);
   --ui-btn-color: white;
   &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {

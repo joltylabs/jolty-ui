@@ -1,6 +1,6 @@
 .btn--white {
-  --ui-btn-bg: var(--gray-a12-dark);
-  --ui-btn-bg-hover: color-mix(in var(--ui-space), var(--gray-a11-dark), var(--gray-a12-dark));
+  --ui-btn-bg: var(--gray-12-dark);
+  --ui-btn-bg-hover: color-mix(in var(--ui-space), var(--gray-a11-dark), var(--gray-12-dark));
   --ui-btn-color: var(--gray-0-dark);
   --ui-btn-outline-color: var(--gray-a12-dark);
   &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {

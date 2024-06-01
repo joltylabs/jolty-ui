@@ -22,7 +22,7 @@
   appearance: none;
   margin: 0;
 }
-.form-control[type="number"] {
+.form-control:where([type="number"]) {
   appearance: textfield;
 }
 .form-control-label {
@@ -47,6 +47,16 @@
   outline: var(--ui-form-control-border-width) solid transparent;
   outline-offset: calc(var(--ui-form-control-border-width) * -1);
 }
+.form-control:where([type="color"]) {
+  padding: 0;
+  overflow: hidden;
+}
+.form-control::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.form-control::-webkit-color-swatch {
+  border-width: 0;
+}
 .form-control:where(textarea) {
   padding-top: var(--ui-form-control-padding-y);
   padding-bottom: var(--ui-form-control-padding-y);
@@ -55,16 +65,24 @@
 }
 .form-control:where(select) {
   appearance: none;
+}
+
+.form-control-wrapper {
   position: relative;
-  background-image: linear-gradient(45deg, transparent 50%, var(--ui-form-control-select-arrow-color) 50%),
-    linear-gradient(135deg, var(--ui-form-control-select-arrow-color) 50%, transparent 50%);
-  background-position:
-    calc(100% - var(--ui-form-control-select-arrow-offset) - var(--ui-form-control-select-arrow-size)) center,
-    calc(100% - var(--ui-form-control-select-arrow-offset)) center;
-  background-size:
-    var(--ui-form-control-select-arrow-size) var(--ui-form-control-select-arrow-size),
-    var(--ui-form-control-select-arrow-size) var(--ui-form-control-select-arrow-size);
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  &:where(:has(select))::after {
+    content: "";
+    display: block;
+    mask-image: var(--icon-chevron-down);
+    mask-size: contain;
+    width: 1.375rem;
+    aspect-ratio: 1;
+    background-color: currentColor;
+    position: absolute;
+    inset-inline-end: 0.5rem;
+    pointer-events: none;
+  }
 }
 
 .form-control::placeholder {

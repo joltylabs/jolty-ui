@@ -1,6 +1,6 @@
 .btn--success {
-  --ui-btn-bg: var(--success-a9);
-  --ui-btn-bg-hover: var(--success-a10);
+  --ui-btn-bg: var(--success-9);
+  --ui-btn-bg-hover: var(--success-10);
   --ui-btn-color: white;
   --ui-btn-outline-color: var(--success-a9);
   &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {

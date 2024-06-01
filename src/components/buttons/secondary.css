@@ -1,6 +1,6 @@
 .btn--secondary {
-  --ui-btn-bg: var(--gray-a9);
-  --ui-btn-bg-hover: var(--gray-a10);
+  --ui-btn-bg: var(--gray-9);
+  --ui-btn-bg-hover: var(--gray-10);
   --ui-btn-color: white;
   --ui-btn-outline-color: var(--gray-a9);
   &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {

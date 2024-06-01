@@ -18,7 +18,7 @@
 @import './icons/icon-warning.css';
 
 @import './components/controls.css';
-@import './components/buttons/buttons.css';
+@import './components/buttons/all.css';
 @import './components/dialog.css';
 @import './components/popover.css';
 @import './components/dropdown.css';
@@ -27,4 +27,5 @@
 @import './components/accordion.css';
 @import './components/tabs.css';
 @import './components/checkbox.css';
+@import './components/radio.css';
 @import './components/alert.css';

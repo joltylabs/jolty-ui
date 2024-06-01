@@ -1,6 +1,6 @@
 .btn--reverse {
-  --ui-btn-bg: var(--gray-a12);
-  --ui-btn-bg-hover: color-mix(in var(--ui-space), var(--gray-a11), var(--gray-a12));
+  --ui-btn-bg: var(--gray-12);
+  --ui-btn-bg-hover: color-mix(in var(--ui-space), var(--gray-11), var(--gray-12));
   --ui-btn-color: var(--gray-0);
   --ui-btn-outline-color: var(--gray-a12);
   &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {

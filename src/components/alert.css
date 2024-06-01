@@ -9,6 +9,7 @@
   --ui-alert-border-width: 1px;
   --ui-alert-border-style: solid;
   --ui-alert-border-color: transparent;
+  --ui-alert-btn-close-margin: 0 -0.25rem;
 }
 
 .alert {
@@ -23,6 +24,9 @@
   font-size: var(--ui-alert-font-size);
   gap: var(--ui-alert-gap);
   border-radius: var(--ui-alert-border-radius);
+  :where(.btn-close) {
+    margin: var(--ui-alert-btn-close-margin);
+  }
 }
 .alert-inner {
   &:where(:first-child) {

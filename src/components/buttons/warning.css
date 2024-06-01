@@ -1,6 +1,6 @@
 .btn--warning {
-  --ui-btn-bg: var(--warning-a9);
-  --ui-btn-bg-hover: var(--warning-a10);
+  --ui-btn-bg: var(--warning-9);
+  --ui-btn-bg-hover: var(--warning-10);
   --ui-btn-color: black;
   --ui-btn-outline-color: var(--warning-a9);
   &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {

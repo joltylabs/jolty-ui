@@ -1,6 +1,6 @@
 .btn--primary {
-  --ui-btn-bg: var(--accent-a9);
-  --ui-btn-bg-hover: var(--accent-a10);
+  --ui-btn-bg: var(--accent-9);
+  --ui-btn-bg-hover: var(--accent-10);
   --ui-btn-outline-color: var(--accent-a9);
   --ui-btn-color: white;
   &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {
