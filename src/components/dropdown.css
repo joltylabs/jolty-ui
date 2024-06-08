@@ -20,7 +20,6 @@
   --ui-dropdown-boundary-offset-start: var(--ui-boundary-offset-start);
   --ui-dropdown-padding: 0.325rem;
   --ui-dropdown-transition-duration: var(--duration-2);
-
   --ui-dropdown-item-padding: 0.25rem 0.75rem;
   --ui-dropdown-item-border-radius: var(--radius-sm);
   --ui-dropdown-item-hover-bg: var(--gray-a2);
@@ -28,7 +27,7 @@
   &::backdrop {
     --ui-dropdown-backdrop-bg: var(--ui-backdrop-bg);
     --ui-dropdown-backdrop-light-bg: var(--ui-backdrop-light-bg);
-    --ui-dropdown-backdrop-transition: opacity var(--ui-dropdown-transition-duration) var(--ease-3);
+    --ui-dropdown-backdrop-transition: opacity var(--duration-2) var(--ease-3);
   }
 }
 
@@ -40,7 +39,8 @@
   box-shadow: var(--ui-dropdown-shadow);
   padding: var(--ui-dropdown-padding);
   --ui-dropdown-boundary-offset: var(--ui-dropdown-boundary-offset-top) var(--ui-dropdown-boundary-offset-end)
-    var(--ui-dropdown-boundary-offset-bottom) var(--ui-dropdown-boundary-offset-start);
+  var(--ui-dropdown-boundary-offset-bottom) var(--ui-dropdown-boundary-offset-start);
+
   &::after {
     width: var(--ui-dropdown-arrow-width);
     height: var(--ui-dropdown-arrow-height);
@@ -64,7 +64,7 @@
 
 .dropdown:where([data-ui-current-placement="dialog"]) {
   inset: var(--ui-dropdown-boundary-offset-top) var(--ui-dropdown-boundary-offset-end)
-    var(--ui-dropdown-boundary-offset-bottom) var(--ui-dropdown-boundary-offset-start);
+  var(--ui-dropdown-boundary-offset-bottom) var(--ui-dropdown-boundary-offset-start);
   max-height: calc(100% - var(--ui-dropdown-boundary-offset-top) - var(--ui-dropdown-boundary-offset-bottom));
 }
 
