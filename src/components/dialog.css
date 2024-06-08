@@ -50,7 +50,9 @@
 .dialog::backdrop {
   opacity: 0;
   background: var(--ui-backdrop-bg);
-  transition: var(--ui-backdrop-transition);
+  transition:
+    opacity var(--duration-3) var(--ease-3),
+    visibility var(--duration-3) var(--ease-3);
 }
 
 .dialog-root,
@@ -92,7 +94,7 @@
   max-height: calc(100% - var(--ui-dialog-boundary-offset-top) - var(--ui-dialog-boundary-offset-bottom));
   max-width: calc(100% - var(--ui-dialog-boundary-offset-start) - var(--ui-dialog-boundary-offset-end));
   inset: var(--ui-dialog-boundary-offset-top) var(--ui-dialog-boundary-offset-end)
-    var(--ui-dialog-boundary-offset-bottom) var(--ui-dialog-boundary-offset-start);
+  var(--ui-dialog-boundary-offset-bottom) var(--ui-dialog-boundary-offset-start);
   padding: var(--ui-dialog-padding-y) var(--ui-dialog-padding-x);
   border-radius: var(--ui-dialog-border-radius);
   transform-origin: var(--ui-dialog-origin-x, center) var(--ui-dialog-origin-y, center);
@@ -341,7 +343,7 @@
 }
 
 .ui-prevent-scroll
-  :where(
+:where(
     .ui-dialog-init:not(.ui-prevents-scroll) > .dialog,
     .ui-dialog-init:not(.ui-prevents-scroll).dialog
   ):where(.ui-root-relative:not(.dialog--drawer, .dialog--no-boundary-offset)) {
