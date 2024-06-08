@@ -1,18 +1,17 @@
 .tabs {
-  --ui-tabs-bg: var(--gray-0);
+  --ui-tabs-bg: transparent;
   --ui-tabs-height: var(--size-lg);
-  --ui-tabs-border-width: var(--ui-border-width);
+  --ui-tabs-border-width: 0;
   --ui-tabs-border-style: var(--ui-border-style);
   --ui-tabs-border-color: var(--ui-border-color);
   --ui-tabs-border-radius: var(--radius);
   --ui-tabs-padding: 0.25rem;
-
   --ui-tab-font-size: var(--text-sm);
   --ui-tab-font-weight: 500;
   --ui-tab-color: var(--gray-11);
   --ui-tab-hover-color: var(--gray-12);
   --ui-tab-current-color: var(--gray-12);
-  --ui-tab-current-bg: var(--gray-2);
+  --ui-tab-current-bg: var(--gray-a2);
   --ui-tab-padding: 0 1rem;
   --ui-tab-border-radius: calc(var(--radius) - 0.25rem);
 }
@@ -46,4 +45,19 @@
   background-color: var(--ui-tab-current-bg);
   color: var(--ui-tab-current-color);
   pointer-events: none;
+}
+
+.tabs--sm {
+  --ui-tabs-height: var(--size-md);
+  --ui-tab-font-size: var(--text-xs);
+  --ui-tab-padding: 0 0.75rem;
+}
+.tabs--outlined {
+  --ui-tabs-bg: var(--ui-main-bg);
+  --ui-tabs-border-width: var(--ui-border-width);
+}
+.tabs--no-radius {
+  --ui-tabs-padding: 0;
+  --ui-tabs-border-radius: 0;
+  --ui-tab-border-radius: 0;
 }
