@@ -14,7 +14,7 @@
   &:where(:not(:hover, :focus-visible)) {
     opacity: 0.75;
   }
-  &:hover {
+  &:where(:not(.btn-close--no-bg)):hover {
     background: var(
       --ui-btn-close-hover-bg,
       color-mix(in var(--ui-space), var(--ui-btn-close-color) 7.5%, transparent)
