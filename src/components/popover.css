@@ -54,13 +54,13 @@
   &::backdrop {
     --ui-popover-backdrop-bg: var(--ui-backdrop-bg);
     --ui-popover-backdrop-light-bg: var(--ui-backdrop-light-bg);
-    --ui-popover-backdrop-transition: opacity var(--ui-popover-transition-duration) var(--ease-3);
+    --ui-popover-backdrop-transition: opacity var(--duration-2) var(--ease-3);
   }
 }
 
 .popover {
   --ui-popover-boundary-offset: var(--ui-popover-boundary-offset-top) var(--ui-popover-boundary-offset-end)
-    var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
+  var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
   background-color: var(--ui-popover-bg);
   border-style: var(--ui-popover-border-style);
   border-color: var(--ui-popover-border-color);
@@ -165,7 +165,7 @@
 
 .popover:where([data-ui-current-placement="dialog"]) {
   inset: var(--ui-popover-boundary-offset-top) var(--ui-popover-boundary-offset-end)
-    var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
+  var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
   max-height: calc(100% - var(--ui-popover-boundary-offset-top) - var(--ui-popover-boundary-offset-bottom));
 }
 
