@@ -1,104 +1,106 @@
 :where(dialog, [popover]) {
-   margin: 0;
-   padding: 0;
-   position: fixed;
-   inset: 0;
-   max-width: 100%;
-   max-height: 100%;
-   width: auto;
-   height: auto;
-   background-color: transparent;
-   color: inherit;
-   overflow: unset;
-   border-width: 0;
-   display: block;
-   &::backdrop {
-      opacity: 0;
-   }
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  inset: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: inherit;
+  overflow: unset;
+  border-width: 0;
+  display: block;
+  &::backdrop {
+    opacity: 0;
+  }
 }
 
 :where([data-ui-floating]) {
-   display: block;
-   z-index: var(--ui-top-layer-z-index, 999);
-   height: fit-content;
-   width: fit-content;
-   position: absolute;
-   left: var(--ui-floating-left);
-   top: var(--ui-floating-top);
-   translate: 0 0 0;
-   overscroll-behavior: contain;
-   transform-origin: var(--ui-floating-transform-origin);
-   max-width: var(--ui-floating-available-width, none);
-   max-height: var(--ui-floating-available-height, none);
-   --ui-floating-left: unset;
-   --ui-floating-top: unset;
-   --ui-floating-width: unset;
-   --ui-floating-height: unset;
-   --ui-floating-available-width: unset;
-   --ui-floating-available-height: unset;
-   --ui-floating-arrow-left: unset;
-   --ui-floating-arrow-top: unset;
-   --ui-floating-arrow-width: unset;
-   --ui-floating-arrow-height: unset;
-   --ui-floating-transform-origin: unset;
-   &::after {
-      content: '';
-      background-color: inherit;
-      position: absolute;
-      top: 0;
-      left: 0;
-      aspect-ratio: 1;
-      translate: var(--ui-floating-arrow-left) var(--ui-floating-arrow-top);
-      rotate: 45deg;
-      mask-image: linear-gradient(
-         var(--arrow-angle),
-         transparent 50%,
-         black 50%
-      );
-   }
-   &:where([data-ui-current-placement^='start']) {
-      --arrow-angle: 45deg;
-   }
-   &:where([data-ui-current-placement^='end']) {
-      --arrow-angle: -135deg;
-   }
-   &:where([data-ui-current-placement^='bottom']) {
-      --arrow-angle: -45deg;
-   }
-   &:where([data-ui-current-placement^='top']) {
-      --arrow-angle: 135deg;
-   }
-   &.ui-active::backdrop {
-      opacity: 1;
-   }
+  display: block;
+  z-index: var(--ui-top-layer-z-index, 999);
+  height: fit-content;
+  width: fit-content;
+  position: absolute;
+  left: var(--ui-floating-left);
+  top: var(--ui-floating-top);
+  translate: 0 0 0;
+  overscroll-behavior: contain;
+  transform-origin: var(--ui-floating-transform-origin);
+  max-width: var(--ui-floating-available-width, none);
+  max-height: var(--ui-floating-available-height, none);
+  --ui-floating-left: unset;
+  --ui-floating-top: unset;
+  --ui-floating-width: unset;
+  --ui-floating-height: unset;
+  --ui-floating-available-width: unset;
+  --ui-floating-available-height: unset;
+  --ui-floating-arrow-left: unset;
+  --ui-floating-arrow-top: unset;
+  --ui-floating-arrow-width: unset;
+  --ui-floating-arrow-height: unset;
+  --ui-floating-transform-origin: unset;
+  &::after {
+    content: "";
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1;
+    translate: var(--ui-floating-arrow-left) var(--ui-floating-arrow-top);
+    rotate: 45deg;
+    mask-image: linear-gradient(var(--arrow-angle), transparent 50%, black 50%);
+  }
+  &:where([data-ui-current-placement^="start"]) {
+    --arrow-angle: 45deg;
+  }
+  &:where([data-ui-current-placement^="end"]) {
+    --arrow-angle: -135deg;
+  }
+  &:where([data-ui-current-placement^="bottom"]) {
+    --arrow-angle: -45deg;
+  }
+  &:where([data-ui-current-placement^="top"]) {
+    --arrow-angle: 135deg;
+  }
+  &.ui-active::backdrop {
+    opacity: 1;
+  }
 }
 @supports (animation-composition: add) {
-   :where([data-ui-floating]) {
-      left: 0;
-      top: 0;
-      translate: var(--ui-floating-left) var(--ui-floating-top) 0;
-   }
+  :where([data-ui-floating]) {
+    left: 0;
+    top: 0;
+    translate: var(--ui-floating-left) var(--ui-floating-top) 0;
+  }
 }
-:where([data-ui-floating][data-ui-current-placement='dialog']) {
-   position: fixed;
-   margin: auto;
-   max-width: fit-content;
-   &::after {
-      display: none;
-   }
+:where([data-ui-floating][data-ui-current-placement="dialog"]) {
+  position: fixed;
+  margin: auto;
+  max-width: fit-content;
+  &::after {
+    display: none;
+  }
 }
 
 :where(:root) {
-   --rtl: 0;
+  --rtl: 0;
+  --gradient-angle-to-start: -90deg;
+  --gradient-angle-to-end: 90deg;
 }
-:where([dir='rtl']) {
-   --rtl: 1;
+:where([dir="rtl"]) {
+  --rtl: 1;
+  --gradient-angle-to-start: 90deg;
+  --gradient-angle-to-end: -90deg;
 }
-:where([dir]:not([dir='rtl'])) {
-   --rtl: 0;
+:where([dir]:not([dir="rtl"])) {
+  --rtl: 0;
+  --gradient-angle-to-start: -90deg;
+  --gradient-angle-to-end: 90deg;
 }
 
 .ui-prevent-scroll :where(body) {
-   overflow: hidden;
-   padding-right: var(--ui-root-scrollbar-width, auto);
+  overflow: hidden;
+  padding-right: var(--ui-root-scrollbar-width, auto);
 }
