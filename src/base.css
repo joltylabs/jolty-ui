@@ -104,3 +104,7 @@
   overflow: hidden;
   padding-right: var(--ui-root-scrollbar-width, auto);
 }
+
+[hidden]:not([hidden='until-found']) {
+  display: none !important;
+}

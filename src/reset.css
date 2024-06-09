@@ -211,6 +211,4 @@ video {
    height: auto;
 }
 
-[hidden]:not([hidden='until-found']) {
-   display: none !important;
-}
+
