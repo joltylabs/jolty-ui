@@ -6,15 +6,17 @@ const postcssImport = require('postcss-import');
 const postcssNested = require('postcss-nested');
 const postcssMergeRules = require('postcss-merge-rules');
 
-
 const inputDir = './src';
 const outputDir = './dist';
-const inputFile = path.join(inputDir, 'index.css');
-const outputFileUnminified = 'jolty-ui.css';
-const outputFileMinified = 'jolty-ui.min.css';
 
-const processCSS = async () => {
-  const css = fs.readFileSync(inputFile, 'utf8');
+const files = [
+  { input: 'all.css', output: 'jolty-ui.css' },
+  { input: 'base.css', output: 'jolty-ui-base.css' },
+  { input: 'reset.css', output: 'jolty-ui-reset.css' }
+];
+
+const processCSS = async (inputFile, outputFileUnminified, outputFileMinified) => {
+  const css = fs.readFileSync(path.join(inputDir, inputFile), 'utf8');
 
   // Define the PostCSS processor with necessary plugins
   const processor = postcss([
@@ -25,7 +27,7 @@ const processCSS = async () => {
 
   // Process for unminified version with source map
   const resultUnminified = await processor.process(css, {
-    from: inputFile,
+    from: path.join(inputDir, inputFile),
     to: path.join(outputDir, outputFileUnminified),
     map: { inline: false }
   });
@@ -47,7 +49,7 @@ const processCSS = async () => {
       }]
     })
   ]).process(css, {
-    from: inputFile,
+    from: path.join(inputDir, inputFile),
     to: path.join(outputDir, outputFileMinified),
     map: { inline: false }
   });
@@ -59,4 +61,6 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir);
 }
 
-processCSS().catch(error => console.error(error));
+files.forEach(file => {
+  processCSS(file.input, file.output, file.output.replace('.css', '.min.css')).catch(error => console.error(error));
+});
