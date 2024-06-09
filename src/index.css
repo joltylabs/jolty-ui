@@ -1,9 +1,9 @@
 @import './reset.css';
 @import './base.css';
 @import './easing.css';
-@import './colors/all.css';
-@import './animations/all.css';
-@import './transitions/all.css';
+@import './colors/index.css';
+@import './animations/index.css';
+@import './transitions/index.css';
 
 @import './theme.css';
 
@@ -18,7 +18,7 @@
 @import './icons/icon-warning.css';
 
 @import './components/controls.css';
-@import './components/buttons/all.css';
+@import './components/buttons/index.css';
 @import './components/dialog.css';
 @import './components/popover.css';
 @import './components/dropdown.css';
