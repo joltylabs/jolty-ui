@@ -33,7 +33,7 @@
   --duration-5: 500ms;
 
   --transition-property: color, background-color, border-color, text-decoration-color, fill, stroke,
-  outline-color, opacity, box-shadow, transform, translate, scale, skew, filter, backdrop-filter;
+    outline-color, opacity, box-shadow, transform, translate, scale, skew, filter, backdrop-filter;
 
   --ui-top-layer-z-index: 999;
 
@@ -56,7 +56,7 @@
   --ui-panel-color: var(--gray-12);
   --ui-panel-border-width: 1px;
   --ui-panel-border-style: none;
-  --ui-panel-border-color: var(--gray-4);
+  --ui-panel-border-color: var(--gray-a4);
   --ui-panel-outline: 2px solid var(--gray-3);
   --ui-panel-outline-offset: 2px;
 
@@ -64,22 +64,25 @@
   --ui-control-color: var(--gray-12);
   --ui-control-border-style: solid;
   --ui-control-border-width: 1px;
-  --ui-control-border-color: var(--gray-a6);
-  --ui-control-border-color-hover: var(--gray-a6);
-  --ui-control-border-color-focus: var(--gray-a7);
+  --ui-control-border-color: var(--gray-6);
+  --ui-control-border-color-hover: var(--gray-7);
+  --ui-control-border-color-focus: var(--accent-8);
   --ui-control-border-radius: var(--radius);
+  --ui-control-outline-width: 2px;
+  --ui-control-outline-style: solid;
+  --ui-control-outline-offset: -2px;
+  --ui-control-outline-color: var(--accent-8);
 
   --shadow-xs: 0 1px 0.125rem 0 oklch(var(--gray-darkest-oklch) / 0.05);
   --shadow-sm: 0 1px 0.1875rem 0 oklch(var(--gray-darkest-oklch) / 0.1),
-  0 1px 0.125rem -1px oklch(var(--gray-darkest-oklch) / 0.1);
+    0 1px 0.125rem -1px oklch(var(--gray-darkest-oklch) / 0.1);
   --shadow: 0 0.25rem 0.375rem -1px oklch(var(--gray-darkest-oklch) / 0.1),
-  0 0.125rem 0.25rem -0.125rem oklch(var(--gray-darkest-oklch) / 0.1);
+    0 0.125rem 0.25rem -0.125rem oklch(var(--gray-darkest-oklch) / 0.1);
   --shadow-lg: 0 0.625rem 1rem -0.1875rem oklch(var(--gray-darkest-oklch) / 0.1),
-  0 0.25rem 0.375rem -0.25rem oklch(var(--gray-darkest-oklch) / 0.1);
+    0 0.25rem 0.375rem -0.25rem oklch(var(--gray-darkest-oklch) / 0.1);
   --shadow-xl: 0 1.25rem 1.5rem -0.375rem oklch(var(--gray-darkest-oklch) / 0.1),
-  0 0.5rem 0.625rem -0.375rem oklch(var(--gray-darkest-oklch) / 0.1);
+    0 0.5rem 0.625rem -0.375rem oklch(var(--gray-darkest-oklch) / 0.1);
   --shadow-2xl: 0 1.5rem 3.125rem -0.75rem oklch(var(--gray-darkest-oklch) / 0.25);
-
   &,
   &::backdrop,
   ::backdrop {

@@ -6,6 +6,10 @@
   --ui-form-control-border-color: var(--ui-control-border-color);
   --ui-form-control-border-color-hover: var(--ui-control-border-color-hover);
   --ui-form-control-border-color-focus: var(--ui-control-border-color-focus);
+  --ui-form-control-outline-style: var(--ui-control-outline-style);
+  --ui-form-control-outline-width: var(--ui-control-outline-width);
+  --ui-form-control-outline-color: var(--ui-control-outline-color);
+  --ui-form-control-outline-offset: var(--ui-control-outline-offset);
   --ui-form-control-border-radius: var(--ui-control-border-radius);
   --ui-form-control-padding-y: 0.5rem;
   --ui-form-control-padding-x: 0.75rem;
@@ -44,8 +48,11 @@
   transition-duration: var(--duration-1);
   transition-property: var(--transition-property);
   transition-timing-function: var(--ease-3);
-  outline: var(--ui-form-control-border-width) solid transparent;
-  outline-offset: calc(var(--ui-form-control-border-width) * -1);
+  outline: var(--ui-form-control-outline-width) var(--ui-form-control-outline-style) transparent;
+  outline-offset: var(--ui-form-control-outline-offset);
+  &:focus {
+    outline-color: var(--ui-form-control-outline-color);
+  }
 }
 .form-control:where([type="color"]) {
   padding: 0;
@@ -88,11 +95,11 @@
 .form-control::placeholder {
   color: var(--ui-form-control-placeholder-color);
 }
-.form-control:focus {
-  outline-color: var(--ui-form-control-border-color-focus);
-}
 .form-control:hover {
   border-color: var(--ui-form-control-border-color-hover);
+}
+.form-control:focus {
+  border-color: var(--ui-form-control-border-color-focus);
 }
 
 .form-control--sm {

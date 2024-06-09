@@ -11,8 +11,8 @@
   --gray-a4-light: oklch(0.16 0.04 var(--gray-hue) / 0.11);
   --gray-a5-light: oklch(0.16 0.04 var(--gray-hue) / 0.14);
   --gray-a6-light: oklch(0.16 0.04 var(--gray-hue) / 0.21);
-  --gray-a7-light: oklch(0.16 0.04 var(--gray-hue) / 0.27);
-  --gray-a8-light: oklch(0.16 0.04 var(--gray-hue) / 0.33);
+  --gray-a7-light: oklch(0.16 0.04 var(--gray-hue) / 0.29);
+  --gray-a8-light: oklch(0.16 0.04 var(--gray-hue) / 0.4);
   --gray-a9-light: oklch(0.16 0.04 var(--gray-hue) / 0.7);
   --gray-a10-light: oklch(0.16 0.04 var(--gray-hue) / 0.74);
   --gray-a11-light: oklch(0.16 0.04 var(--gray-hue) / 0.65);
@@ -25,8 +25,8 @@
   --gray-4-light: oklch(0.91 0.003 var(--gray-hue));
   --gray-5-light: oklch(0.89 0.004 var(--gray-hue));
   --gray-6-light: oklch(0.84 0.007 var(--gray-hue));
-  --gray-7-light: oklch(0.793 0.008 var(--gray-hue));
-  --gray-8-light: oklch(0.75 0.01 var(--gray-hue));
+  --gray-7-light: oklch(0.78 0.008 var(--gray-hue));
+  --gray-8-light: oklch(0.7 0.01 var(--gray-hue));
   --gray-9-light: oklch(0.45 0.02 var(--gray-hue));
   --gray-10-light: oklch(0.415 0.022 var(--gray-hue));
   --gray-11-light: oklch(0.49 0.02 var(--gray-hue));
