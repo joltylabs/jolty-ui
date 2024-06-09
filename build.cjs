@@ -10,7 +10,7 @@ const inputDir = './src';
 const outputDir = './dist';
 
 const files = [
-  { input: 'all.css', output: 'jolty-ui.css' },
+  { input: 'index.css', output: 'jolty-ui.css' },
   { input: 'base.css', output: 'jolty-ui-base.css' },
   { input: 'reset.css', output: 'jolty-ui-reset.css' }
 ];
