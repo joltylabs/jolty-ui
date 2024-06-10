@@ -13,7 +13,8 @@
   background: var(--ui-btn-bg);
   color: var(--ui-btn-color);
   font-weight: var(--ui-btn-font-weight, 500);
-  border: var(--ui-btn-border-width) var(--ui-btn-border-style) var(--ui-btn-border-color);
+  border: var(--ui-btn-border-width, 1px) var(--ui-btn-border-style, solid)
+    var(--ui-btn-border-color, transparent);
   transition-duration: var(--duration-1);
   transition-property: var(--transition-property);
   transition-timing-function: var(--ease-3);
@@ -22,7 +23,7 @@
   outline-offset: var(--ui-btn-outline-offset, 2px);
   &:hover {
     background-color: var(--ui-btn-bg-hover);
-    border-color: var(--ui-btn-border-color-hover, var(--ui-btn-border-color));
+    border-color: var(--ui-btn-border-color-hover, var(--ui-btn-border-color, transparent));
     color: var(--ui-btn-color-hover, var(--ui-btn-color));
   }
   &:focus-visible {

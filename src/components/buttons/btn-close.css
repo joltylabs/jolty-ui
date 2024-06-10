@@ -17,7 +17,7 @@
   &:where(:not(.btn-close--no-bg)):hover {
     background: var(
       --ui-btn-close-hover-bg,
-      color-mix(in var(--ui-space), var(--ui-btn-close-color) 7.5%, transparent)
+      color-mix(in var(--ui-space), var(--ui-btn-close-color) 7.5%, oklch(0 0 var(--gray-hue) / 0))
     );
   }
   &:focus-visible {
@@ -26,7 +26,7 @@
       color-mix(
         in var(--ui-space),
         var(--ui-btn-close-outline-color, var(--ui-btn-close-color)) 25%,
-        transparent
+        oklch(0 0 var(--gray-hue) / 0)
       )
     );
   }
