@@ -28,7 +28,7 @@
   translate: 0 0 0;
   overscroll-behavior: contain;
   transform-origin: var(--ui-floating-transform-origin);
-  max-width: var(--ui-floating-available-width, none);
+  max-width: var(--ui-floating-available-width, 100svw);
   max-height: var(--ui-floating-available-height, none);
   --ui-floating-left: unset;
   --ui-floating-top: unset;
@@ -105,6 +105,6 @@
   padding-right: var(--ui-root-scrollbar-width, auto);
 }
 
-[hidden]:not([hidden='until-found']) {
+[hidden]:not([hidden="until-found"]) {
   display: none !important;
 }

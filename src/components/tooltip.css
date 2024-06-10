@@ -40,6 +40,10 @@
   box-shadow: var(--ui-tooltip-shadow);
   --ui-tooltip-boundary-offset: var(--ui-tooltip-boundary-offset-top) var(--ui-tooltip-boundary-offset-end)
     var(--ui-tooltip-boundary-offset-bottom) var(--ui-tooltip-boundary-offset-start);
+  max-width: var(
+    --ui-floating-available-width,
+    calc(100svw - var(--ui-tooltip-boundary-offset-start) - var(--ui-tooltip-boundary-offset-end))
+  );
   &::after {
     width: var(--ui-tooltip-arrow-width);
     height: var(--ui-tooltip-arrow-height);

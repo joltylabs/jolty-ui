@@ -70,6 +70,10 @@
   width: var(--ui-popover-size);
   color: var(--ui-popover-color);
   box-shadow: var(--ui-popover-shadow);
+  max-width: var(
+    --ui-floating-available-width,
+    calc(100svw - var(--ui-popover-boundary-offset-start) - var(--ui-popover-boundary-offset-end))
+  );
   &:focus-visible {
     outline: var(--ui-popover-outline);
     outline-offset: var(--ui-popover-outline-offset);
