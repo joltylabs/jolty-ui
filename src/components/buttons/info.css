@@ -1,29 +1,29 @@
-.btn--info {
+.ui-btn--info {
   --ui-btn-bg: var(--info-9);
   --ui-btn-bg-hover: var(--info-10);
   --ui-btn-outline-color: var(--info-a9);
   --ui-btn-color: white;
-  &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {
+  &:where(.ui-btn--outline, .ui-btn--surface, .ui-btn--soft, .ui-btn--ghost, .ui-btn--link) {
     --ui-btn-color: var(--info-a11);
     --ui-btn-outline-color: var(--info-a6);
   }
-  &:where(.btn--outline, .btn--surface) {
+  &:where(.ui-btn--outline, .ui-btn--surface) {
     --ui-btn-border-color: var(--info-a5);
   }
-  &:where(.btn--outline, .btn--ghost) {
+  &:where(.ui-btn--outline, .ui-btn--ghost) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: var(--info-a1);
   }
-  &:where(.btn--link) {
+  &:where(.ui-btn--link) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: transparent;
     --ui-btn-color-hover: var(--info-a12);
   }
-  &:where(.btn--soft) {
+  &:where(.ui-btn--soft) {
     --ui-btn-bg: var(--info-a3);
     --ui-btn-bg-hover: var(--info-a4);
   }
-  &:where(.btn--surface) {
+  &:where(.ui-btn--surface) {
     --ui-btn-bg: var(--info-a1);
     --ui-btn-bg-hover: var(--info-a2);
   }

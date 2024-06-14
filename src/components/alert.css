@@ -1,4 +1,4 @@
-.alert {
+.ui-alert {
   --ui-alert-gap: 0.75rem;
   --ui-alert-padding-y: 1rem;
   --ui-alert-padding-x: 1rem;
@@ -9,10 +9,10 @@
   --ui-alert-border-width: 1px;
   --ui-alert-border-style: solid;
   --ui-alert-border-color: transparent;
-  --ui-alert-btn-close-margin: 0 -0.25rem;
+  --ui-alert-ui-btn-close-margin: 0 -0.25rem;
 }
 
-.alert {
+.ui-alert {
   display: flex;
   align-items: center;
   background: var(--ui-alert-bg);
@@ -24,11 +24,11 @@
   font-size: var(--ui-alert-font-size);
   gap: var(--ui-alert-gap);
   border-radius: var(--ui-alert-border-radius);
-  :where(.btn-close) {
-    margin: var(--ui-alert-btn-close-margin);
+  :where(.ui-btn-close) {
+    margin: var(--ui-alert-ui-btn-close-margin);
   }
 }
-.alert-inner {
+.ui-alert-inner {
   &:where(:first-child) {
     padding-left: calc(var(--ui-alert-gap) / 2);
   }
@@ -37,98 +37,98 @@
   }
 }
 
-.alert--primary {
+.ui-alert--primary {
   --ui-alert-bg: var(--accent-a2);
   --ui-alert-color: var(--accent-a11);
-  &:where(.alert--surface) {
+  &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--accent-a1);
     --ui-alert-border-color: var(--accent-a6);
   }
-  &:where(.alert--outline) {
+  &:where(.ui-alert--outline) {
     --ui-alert-bg: transparent;
     --ui-alert-border-color: var(--accent-a6);
   }
-  &:where(.alert--high-contrast) {
+  &:where(.ui-alert--high-contrast) {
     --ui-alert-color: var(--accent-a12);
   }
 }
 
-.alert--danger {
+.ui-alert--danger {
   --ui-alert-bg: var(--danger-a2);
   --ui-alert-color: var(--danger-a11);
-  &:where(.alert--surface) {
+  &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--danger-a1);
     --ui-alert-border-color: var(--danger-a6);
   }
-  &:where(.alert--outline) {
+  &:where(.ui-alert--outline) {
     --ui-alert-bg: transparent;
     --ui-alert-border-color: var(--danger-a6);
   }
-  &:where(.alert--high-contrast) {
+  &:where(.ui-alert--high-contrast) {
     --ui-alert-color: var(--danger-a12);
   }
 }
 
-.alert--info {
+.ui-alert--info {
   --ui-alert-bg: var(--info-a2);
   --ui-alert-color: var(--info-a11);
-  &:where(.alert--surface) {
+  &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--info-a1);
     --ui-alert-border-color: var(--info-a6);
   }
-  &:where(.alert--outline) {
+  &:where(.ui-alert--outline) {
     --ui-alert-bg: transparent;
     --ui-alert-border-color: var(--info-a6);
   }
-  &:where(.alert--high-contrast) {
+  &:where(.ui-alert--high-contrast) {
     --ui-alert-color: var(--info-a12);
   }
 }
 
-.alert--secondary {
+.ui-alert--secondary {
   --ui-alert-bg: var(--gray-a2);
   --ui-alert-color: var(--gray-a11);
-  &:where(.alert--surface) {
+  &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--gray-a1);
     --ui-alert-border-color: var(--gray-a6);
   }
-  &:where(.alert--outline) {
+  &:where(.ui-alert--outline) {
     --ui-alert-bg: transparent;
     --ui-alert-border-color: var(--gray-a6);
   }
-  &:where(.alert--high-contrast) {
+  &:where(.ui-alert--high-contrast) {
     --ui-alert-color: var(--gray-a12);
   }
 }
 
-.alert--success {
+.ui-alert--success {
   --ui-alert-bg: var(--success-a2);
   --ui-alert-color: var(--success-a11);
-  &:where(.alert--surface) {
+  &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--success-a1);
     --ui-alert-border-color: var(--success-a6);
   }
-  &:where(.alert--outline) {
+  &:where(.ui-alert--outline) {
     --ui-alert-bg: transparent;
     --ui-alert-border-color: var(--success-a6);
   }
-  &:where(.alert--high-contrast) {
+  &:where(.ui-alert--high-contrast) {
     --ui-alert-color: var(--success-a12);
   }
 }
 
-.alert--warning {
+.ui-alert--warning {
   --ui-alert-bg: var(--warning-a2);
   --ui-alert-color: var(--warning-a11);
-  &:where(.alert--surface) {
+  &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--warning-a1);
     --ui-alert-border-color: var(--warning-a6);
   }
-  &:where(.alert--outline) {
+  &:where(.ui-alert--outline) {
     --ui-alert-bg: transparent;
     --ui-alert-border-color: var(--warning-a6);
   }
-  &:where(.alert--high-contrast) {
+  &:where(.ui-alert--high-contrast) {
     --ui-alert-color: var(--warning-a12);
   }
 }

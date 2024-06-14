@@ -1,4 +1,4 @@
-.form-control {
+.ui-form-control {
   --ui-form-control-bg: var(--ui-control-bg);
   --ui-form-control-color: var(--ui-control-color);
   --ui-form-control-border-style: var(--ui-control-border-style);
@@ -21,20 +21,20 @@
   --ui-form-control-placeholder-color: var(--gray-11);
 }
 
-.form-control::-webkit-outer-spin-button,
-.form-control::-webkit-inner-spin-button {
+.ui-form-control::-webkit-outer-spin-button,
+.ui-form-control::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
 }
-.form-control:where([type="number"]) {
+.ui-form-control:where([type="number"]) {
   appearance: textfield;
 }
-.form-control-label {
+.ui-form-control-label {
   display: block;
   margin-bottom: 0.5em;
   font-size: var(--text-sm);
 }
-.form-control {
+.ui-form-control {
   color: var(--ui-form-control-color);
   border-width: var(--ui-form-control-border-width);
   border-color: var(--ui-form-control-border-color);
@@ -54,34 +54,34 @@
     outline-color: var(--ui-form-control-outline-color);
   }
 }
-.form-control:where([type="color"]) {
+.ui-form-control:where([type="color"]) {
   padding: 0;
   overflow: hidden;
 }
-.form-control::-webkit-color-swatch-wrapper {
+.ui-form-control::-webkit-color-swatch-wrapper {
   padding: 0;
 }
-.form-control::-webkit-color-swatch {
+.ui-form-control::-webkit-color-swatch {
   border-width: 0;
 }
-.form-control:where(textarea) {
+.ui-form-control:where(textarea) {
   padding-top: var(--ui-form-control-padding-y);
   padding-bottom: var(--ui-form-control-padding-y);
   height: auto;
   min-height: var(--ui-form-control-height);
 }
-.form-control:where(select) {
+.ui-form-control:where(select) {
   appearance: none;
 }
 
-.form-control-wrapper {
+.ui-form-control-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   &:where(:has(select))::after {
     content: "";
     display: block;
-    mask-image: var(--icon-chevron-down);
+    mask-image: var(--ui-icon-chevron-down);
     mask-size: contain;
     width: 1.375rem;
     aspect-ratio: 1;
@@ -92,22 +92,22 @@
   }
 }
 
-.form-control::placeholder {
+.ui-form-control::placeholder {
   color: var(--ui-form-control-placeholder-color);
 }
-.form-control:hover {
+.ui-form-control:hover {
   border-color: var(--ui-form-control-border-color-hover);
 }
-.form-control:focus {
+.ui-form-control:focus {
   border-color: var(--ui-form-control-border-color-focus);
 }
 
-.form-control--sm {
+.ui-form-control--sm {
   --ui-form-control-height: var(--size-sm);
   --ui-form-control-padding-x: 0.625rem;
   --ui-form-control-border-radius: var(--radius-sm);
 }
-.form-control--lg {
+.ui-form-control--lg {
   --ui-form-control-height: var(--size-lg);
   --ui-form-control-padding-x: 1.125rem;
   --ui-form-control-font-size: 1rem;

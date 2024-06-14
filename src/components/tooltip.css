@@ -1,4 +1,4 @@
-.tooltip {
+.ui-tooltip {
   --ui-tooltip-color: var(--gray-0);
   --ui-tooltip-bg: var(--gray-12);
   --ui-tooltip-border-style: var(--ui-panel-border-style);
@@ -30,7 +30,7 @@
   --ui-tooltip-transition-duration: var(--duration-2);
 }
 
-.tooltip {
+.ui-tooltip {
   background-color: var(--ui-tooltip-bg);
   border-radius: var(--ui-tooltip-border-radius);
   border: var(--ui-tooltip-border-width) var(--ui-tooltip-border-style) var(--ui-tooltip-border-color);
@@ -52,11 +52,11 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .tooltip:where(.ui-enter-active) {
+  .ui-tooltip:where(.ui-enter-active) {
     animation: var(--animation-fade-in), var(--animation-scale-in-up);
     animation-duration: var(--ui-tooltip-transition-duration);
   }
-  .tooltip:where(.ui-leave-active) {
+  .ui-tooltip:where(.ui-leave-active) {
     animation: var(--animation-fade-out), var(--animation-scale-out-down);
     animation-duration: var(--ui-tooltip-transition-duration);
   }

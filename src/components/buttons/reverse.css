@@ -1,29 +1,29 @@
-.btn--reverse {
+.ui-btn--reverse {
   --ui-btn-bg: var(--gray-12);
   --ui-btn-bg-hover: color-mix(in var(--ui-space), var(--gray-11), var(--gray-12));
   --ui-btn-color: var(--gray-0);
   --ui-btn-outline-color: var(--gray-a12);
-  &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {
+  &:where(.ui-btn--outline, .ui-btn--surface, .ui-btn--soft, .ui-btn--ghost, .ui-btn--link) {
     --ui-btn-color: var(--gray-a12);
     --ui-btn-outline-color: var(--gray-a6);
   }
-  &:where(.btn--outline, .btn--surface) {
+  &:where(.ui-btn--outline, .ui-btn--surface) {
     --ui-btn-border-color: var(--gray-a5);
   }
-  &:where(.btn--outline, .btn--ghost) {
+  &:where(.ui-btn--outline, .ui-btn--ghost) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: var(--gray-a1);
   }
-  &:where(.btn--link) {
+  &:where(.ui-btn--link) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: transparent;
     --ui-btn-color-hover: var(--gray-a11);
   }
-  &:where(.btn--soft) {
+  &:where(.ui-btn--soft) {
     --ui-btn-bg: var(--gray-a3);
     --ui-btn-bg-hover: var(--gray-a4);
   }
-  &:where(.btn--surface) {
+  &:where(.ui-btn--surface) {
     --ui-btn-bg: var(--gray-a1);
     --ui-btn-bg-hover: var(--gray-a2);
   }

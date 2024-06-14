@@ -1,4 +1,4 @@
-.popover {
+.ui-popover {
   --ui-popover-color: var(--ui-panel-color);
   --ui-popover-bg: var(--ui-panel-bg);
   --ui-popover-border-style: var(--ui-panel-border-style);
@@ -58,7 +58,7 @@
   }
 }
 
-.popover {
+.ui-popover {
   --ui-popover-boundary-offset: var(--ui-popover-boundary-offset-top) var(--ui-popover-boundary-offset-end)
     var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
   background-color: var(--ui-popover-bg);
@@ -81,10 +81,10 @@
   &:where(:not(.ui-modal))::backdrop {
     background: var(--ui-popover-backdrop-light-bg);
   }
-  &:where(.popover--no-backdrop)::backdrop {
+  &:where(.ui-popover--no-backdrop)::backdrop {
     display: none;
   }
-  &:where(:has(> .popover-body)) {
+  &:where(:has(> .ui-popover-body)) {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -96,46 +96,46 @@
   }
 }
 
-.popover-header {
+.ui-popover-header {
   padding: var(--ui-popover-padding-y) var(--ui-popover-padding-x) var(--ui-popover-header-padding-bottom);
   display: flex;
   align-items: center;
   gap: var(--ui-popover-header-gap);
 }
-.popover-footer {
+.ui-popover-footer {
   padding: var(--ui-popover-footer-padding-top) var(--ui-popover-padding-x) var(--ui-popover-padding-y);
-  & :where(.popover-btns) {
+  & :where(.ui-popover-btns) {
     margin-top: 0;
   }
 }
-.popover-body {
+.ui-popover-body {
   padding: var(--ui-popover-padding-y) var(--ui-popover-padding-x);
   overflow: auto;
   flex-grow: 1;
   position: relative;
-  &:where(.popover-header ~ *) {
+  &:where(.ui-popover-header ~ *) {
     padding-top: 0;
   }
-  &:where(:has(~ .popover-footer)) {
+  &:where(:has(~ .ui-popover-footer)) {
     padding-bottom: 0;
   }
 }
-.popover-close {
+.ui-popover-close {
   position: absolute;
   top: var(--ui-popover-close-offset-top);
   inset-inline-end: var(--ui-popover-close-offset-end);
 }
-.popover-title {
+.ui-popover-title {
   font-weight: var(--ui-popover-title-font-weight);
   font-size: var(--ui-popover-title-font-size);
   margin-bottom: var(--ui-popover-title-margin-bottom);
 }
 
-.popover-description {
+.ui-popover-description {
   font-size: var(--ui-popover-description-font-size);
 }
 
-.popover-btns {
+.ui-popover-btns {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -143,18 +143,18 @@
   gap: var(--ui-popover-btns-gap);
 }
 
-.popover-footer {
+.ui-popover-footer {
   padding: var(--ui-popover-footer-padding-top) var(--ui-popover-padding-x) var(--ui-popover-padding-y);
-  & :where(.popover-btns) {
+  & :where(.ui-popover-btns) {
     margin-top: 0;
   }
 }
 
-:where(.popover-header) {
-  & .popover-title {
+:where(.ui-popover-header) {
+  & .ui-popover-title {
     margin-bottom: 0;
   }
-  & .popover-close {
+  & .ui-popover-close {
     &:where(:last-child) {
       position: relative;
       inset: auto;
@@ -167,44 +167,44 @@
   }
 }
 
-.popover:where([data-ui-current-placement="dialog"]) {
+.ui-popover:where([data-ui-current-placement="dialog"]) {
   inset: var(--ui-popover-boundary-offset-top) var(--ui-popover-boundary-offset-end)
     var(--ui-popover-boundary-offset-bottom) var(--ui-popover-boundary-offset-start);
   max-height: calc(100% - var(--ui-popover-boundary-offset-top) - var(--ui-popover-boundary-offset-bottom));
 }
 
-.popover::backdrop {
+.ui-popover::backdrop {
   background-color: var(--ui-popover-backdrop-light-bg);
 }
-.popover.ui-modal::backdrop {
+.ui-popover.ui-modal::backdrop {
   background-color: var(--ui-popover-backdrop-bg);
 }
 
-.popover:where(.ui-light-dismiss-prevent, .ui-back-dismiss-prevent) {
+.ui-popover:where(.ui-light-dismiss-prevent, .ui-back-dismiss-prevent) {
   animation: backdropPreventHide var(--duration-3) var(--ease-3);
   animation-direction: alternate;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .popover::backdrop {
+  .ui-popover::backdrop {
     transition: var(--ui-popover-backdrop-transition);
   }
-  .popover.ui-enter-active {
+  .ui-popover.ui-enter-active {
     animation: var(--animation-fade-in), var(--animation-scale-in-up);
     animation-duration: var(--ui-popover-transition-duration);
   }
-  .popover.ui-leave-active {
+  .ui-popover.ui-leave-active {
     animation: var(--animation-fade-out), var(--animation-scale-out-down);
     animation-duration: var(--ui-popover-transition-duration);
   }
 }
 
-.popover--sm {
+.ui-popover--sm {
   --ui-popover-size: var(--ui-popover-size-sm);
 }
-.popover--md {
+.ui-popover--md {
   --ui-popover-size: var(--ui-popover-size-md);
 }
-.popover--lg {
+.ui-popover--lg {
   --ui-popover-size: var(--ui-popover-size-lg);
 }

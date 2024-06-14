@@ -1,29 +1,29 @@
-.btn--danger {
+.ui-btn--danger {
   --ui-btn-bg: var(--danger-9);
   --ui-btn-bg-hover: var(--danger-10);
   --ui-btn-outline-color: var(--danger-a9);
   --ui-btn-color: white;
-  &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {
+  &:where(.ui-btn--outline, .ui-btn--surface, .ui-btn--soft, .ui-btn--ghost, .ui-btn--link) {
     --ui-btn-color: var(--danger-a11);
     --ui-btn-outline-color: var(--danger-a6);
   }
-  &:where(.btn--outline, .btn--surface) {
+  &:where(.ui-btn--outline, .ui-btn--surface) {
     --ui-btn-border-color: var(--danger-a5);
   }
-  &:where(.btn--outline, .btn--ghost) {
+  &:where(.ui-btn--outline, .ui-btn--ghost) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: var(--danger-a1);
   }
-  &:where(.btn--link) {
+  &:where(.ui-btn--link) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: transparent;
     --ui-btn-color-hover: var(--danger-a12);
   }
-  &:where(.btn--soft) {
+  &:where(.ui-btn--soft) {
     --ui-btn-bg: var(--danger-a3);
     --ui-btn-bg-hover: var(--danger-a4);
   }
-  &:where(.btn--surface) {
+  &:where(.ui-btn--surface) {
     --ui-btn-bg: var(--danger-a1);
     --ui-btn-bg-hover: var(--danger-a2);
   }

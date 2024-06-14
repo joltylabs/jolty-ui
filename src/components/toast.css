@@ -1,12 +1,12 @@
-.toasts {
-  --ui-toasts-z-index: var(--ui-top-layer-z-index);
+.ui-toasts {
+  --ui-toasts-z-index: var(--ui-top-layer-z-index, 999);
   --ui-toasts-boundary-offset-top: var(--ui-boundary-offset-top, 0);
   --ui-toasts-boundary-offset-end: var(--ui-boundary-offset-end, 0);
   --ui-toasts-boundary-offset-bottom: var(--ui-boundary-offset-bottom, 0);
   --ui-toasts-boundary-offset-start: var(--ui-boundary-offset-start, 0);
   --ui-toasts-gap: 0.375rem;
 }
-.toast {
+.ui-toast {
   --ui-toast-radius: var(--radius);
   --ui-toast-padding: 0.75rem 0.875rem;
   --ui-toast-font-size: var(--text-sm);
@@ -19,17 +19,17 @@
   --ui-toast-border-color: var(--ui-panel-border-color);
   --ui-toast-outline: var(--ui-panel-outline);
   --ui-toast-outline-offset: var(--ui-panel-outline-offset);
-  --ui-toast-btn-close-size: 1.25rem;
+  --ui-toast-ui-btn-close-size: 1.25rem;
   --ui-toast-progress-height: 2px;
   --ui-toast-progress-opacity: 0.15;
   --ui-toast-progress-bg: currentColor;
-  --ui-toast-icon: var(--icon-check);
+  --ui-toast-icon: var(--ui-icon-check);
   --ui-toast-icon-color: currentColor;
   --ui-toast-backdrop-filter: blur(0.375rem);
   --ui-toast-close-margin: 0 -0.25rem;
 }
 
-.toasts {
+.ui-toasts {
   position: fixed;
   pointer-events: none;
   display: flex;
@@ -42,7 +42,7 @@
     display: none;
   }
 }
-.toast {
+.ui-toast {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -64,12 +64,12 @@
   animation-timing-function: var(--ease-in-out-3);
   backdrop-filter: var(--ui-toast-backdrop-filter);
   box-shadow: var(--shadow-lg);
-  & .btn-close {
-    --ui-btn-icon-size: var(--ui-toast-btn-close-size);
+  & .ui-btn-close {
+    --ui-btn-icon-size: var(--ui-toast-ui-btn-close-size);
     margin: var(--ui-toast-close-margin);
   }
 }
-.toast-progress {
+.ui-toast-progress {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -85,11 +85,11 @@
   }
 }
 
-:where(.ui-prevent-scroll) .toasts {
+:where(.ui-prevent-scroll) .ui-toasts {
   right: calc(var(--ui-root-scrollbar-width) + var(--ui-toasts-boundary-offset-end, 0));
 }
 
-.toast-icon {
+.ui-toast-icon {
   aspect-ratio: 1;
   width: 1.5rem;
   flex-shrink: 0;
@@ -100,8 +100,8 @@
   mask-image: var(--ui-toast-icon);
 }
 
-.toast--danger {
-  --ui-toast-icon: var(--icon-not-allowed);
+.ui-toast--danger {
+  --ui-toast-icon: var(--ui-icon-not-allowed);
   --ui-toast-color: var(--danger-12);
   --ui-toast-bg: var(--danger-3);
   --ui-toast-bg: linear-gradient(
@@ -112,8 +112,8 @@
   --ui-toast-border-color: var(--danger-3);
   --ui-toast-border-style: solid;
 }
-.toast--success {
-  --ui-toast-icon: var(--icon-check-circle);
+.ui-toast--success {
+  --ui-toast-icon: var(--ui-icon-check-circle);
   --ui-toast-color: var(--success-12);
   --ui-toast-bg: var(--success-3);
   --ui-toast-bg: linear-gradient(
@@ -124,8 +124,8 @@
   --ui-toast-border-color: var(--success-3);
   --ui-toast-border-style: solid;
 }
-.toast--warning {
-  --ui-toast-icon: var(--icon-warning);
+.ui-toast--warning {
+  --ui-toast-icon: var(--ui-icon-warning);
   --ui-toast-color: var(--warning-12);
   --ui-toast-bg: var(--warning-3);
   --ui-toast-bg: linear-gradient(
@@ -136,8 +136,8 @@
   --ui-toast-border-color: var(--warning-3);
   --ui-toast-border-style: solid;
 }
-.toast--info {
-  --ui-toast-icon: var(--icon-info-circle);
+.ui-toast--info {
+  --ui-toast-icon: var(--ui-icon-info-circle);
   --ui-toast-color: var(--info-12);
   --ui-toast-bg: var(--info-3);
   --ui-toast-bg: linear-gradient(
@@ -149,43 +149,43 @@
   --ui-toast-border-style: solid;
 }
 
-:is(.toasts--start, .toasts--top-start, .toasts--bottom-start) {
+:is(.ui-toasts--start, .ui-toasts--top-start, .ui-toasts--bottom-start) {
   inset-inline-end: auto;
 }
-:is(.toasts--end, .toasts--top-end, .toasts--bottom-end) {
+:is(.ui-toasts--end, .ui-toasts--top-end, .ui-toasts--bottom-end) {
   inset-inline-start: auto;
   align-items: flex-end;
 }
-:is(.toasts--top, .toasts--bottom) {
+:is(.ui-toasts--top, .ui-toasts--bottom) {
   align-items: center;
 }
-:is(.toasts--bottom, .toasts--bottom-start, .toasts--bottom-end) {
+:is(.ui-toasts--bottom, .ui-toasts--bottom-start, .ui-toasts--bottom-end) {
   top: auto;
 }
-:is(.toasts--top, .toasts--top-start, .toasts--top-end) {
+:is(.ui-toasts--top, .ui-toasts--top-start, .ui-toasts--top-end) {
   bottom: auto;
 }
-:is(.toasts--bottom-end, .toasts--top-end, .toasts--end) :where(.toast) {
+:is(.ui-toasts--bottom-end, .ui-toasts--top-end, .ui-toasts--end) :where(.ui-toast) {
   --toast-animation-enter: var(--animation-slide-in-start), var(--animation-fade-in);
   --toast-animation-leave: var(--animation-slide-out-end), var(--animation-fade-out);
 }
-:is(.toasts--bottom-start, .toasts--top-start, .toasts--start) :where(.toast) {
+:is(.ui-toasts--bottom-start, .ui-toasts--top-start, .ui-toasts--start) :where(.ui-toast) {
   --toast-animation-enter: var(--animation-slide-in-end), var(--animation-fade-in);
   --toast-animation-leave: var(--animation-slide-out-start), var(--animation-fade-out);
 }
-.toasts--bottom :where(.toast) {
+.ui-toasts--bottom :where(.ui-toast) {
   --toast-animation-enter: var(--animation-slide-in-up), var(--animation-fade-in);
   --toast-animation-leave: var(--animation-slide-out-down), var(--animation-fade-out);
 }
-.toasts--top :where(.toast) {
+.ui-toasts--top :where(.ui-toast) {
   --toast-animation-enter: var(--animation-slide-in-down), var(--animation-fade-in);
   --toast-animation-leave: var(--animation-slide-out-up), var(--animation-fade-out);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .toast:where(.ui-enter-active) {
+  .ui-toast:where(.ui-enter-active) {
     animation: var(--toast-animation-enter);
   }
-  .toast:where(.ui-leave-active) {
+  .ui-toast:where(.ui-leave-active) {
     animation: var(--toast-animation-leave);
   }
 }

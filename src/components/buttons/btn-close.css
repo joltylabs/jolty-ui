@@ -1,4 +1,4 @@
-.btn-close {
+.ui-btn-close {
   --ui-btn-close-color: currentColor;
   display: inline-flex;
   align-items: center;
@@ -14,7 +14,7 @@
   &:where(:not(:hover, :focus-visible)) {
     opacity: 0.75;
   }
-  &:where(:not(.btn-close--no-bg)):hover {
+  &:where(:not(.ui-btn-close--no-bg)):hover {
     background: var(
       --ui-btn-close-hover-bg,
       color-mix(in var(--ui-space), var(--ui-btn-close-color) 7.5%, oklch(0 0 var(--gray-hue) / 0))
@@ -35,7 +35,7 @@
     display: block;
     aspect-ratio: 1;
     width: var(--ui-btn-close-icon-size, 1.5rem);
-    mask: var(--icon-cross) no-repeat center / contain;
+    mask: var(--ui-icon-cross) no-repeat center / contain;
     background-color: currentColor;
     transition: inherit;
   }

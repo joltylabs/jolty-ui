@@ -1,29 +1,29 @@
-.btn--primary {
+.ui-btn--primary {
   --ui-btn-bg: var(--accent-9);
   --ui-btn-bg-hover: var(--accent-10);
   --ui-btn-outline-color: var(--accent-a9);
   --ui-btn-color: white;
-  &:where(.btn--outline, .btn--surface, .btn--soft, .btn--ghost, .btn--link) {
+  &:where(.ui-btn--outline, .ui-btn--surface, .ui-btn--soft, .ui-btn--ghost, .ui-btn--link) {
     --ui-btn-color: var(--accent-a11);
     --ui-btn-outline-color: var(--accent-a6);
   }
-  &:where(.btn--outline, .btn--surface) {
+  &:where(.ui-btn--outline, .ui-btn--surface) {
     --ui-btn-border-color: var(--accent-a5);
   }
-  &:where(.btn--outline, .btn--ghost) {
+  &:where(.ui-btn--outline, .ui-btn--ghost) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: var(--accent-a1);
   }
-  &:where(.btn--link) {
+  &:where(.ui-btn--link) {
     --ui-btn-bg: transparent;
     --ui-btn-bg-hover: transparent;
     --ui-btn-color-hover: var(--accent-a12);
   }
-  &:where(.btn--soft) {
+  &:where(.ui-btn--soft) {
     --ui-btn-bg: var(--accent-a3);
     --ui-btn-bg-hover: var(--accent-a4);
   }
-  &:where(.btn--surface) {
+  &:where(.ui-btn--surface) {
     --ui-btn-bg: var(--accent-a1);
     --ui-btn-bg-hover: var(--accent-a2);
   }

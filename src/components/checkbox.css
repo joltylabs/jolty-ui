@@ -1,4 +1,4 @@
-.checkbox {
+.ui-checkbox {
   --ui-checkbox-bg: var(--ui-control-bg);
   --ui-checkbox-color: white;
   --ui-checkbox-border-style: var(--ui-control-border-style);
@@ -14,11 +14,11 @@
   --ui-checkbox-checked-bg-hover: var(--accent-10);
   --ui-checkbox-checked-border-color: var(--accent-9);
   --ui-checkbox-checked-border-color-hover: var(--accent-10);
-  --ui-checkbox-icon: var(--icon-check);
+  --ui-checkbox-icon: var(--ui-icon-check);
   --ui-checkbox-size: 1rem;
 }
 
-.checkbox {
+.ui-checkbox {
   appearance: none;
   width: var(--ui-checkbox-size);
   height: fit-content;

@@ -1,4 +1,4 @@
-.dropdown {
+.ui-dropdown {
   --ui-dropdown-color: var(--ui-panel-color);
   --ui-dropdown-bg: var(--ui-panel-bg);
   --ui-dropdown-border-style: var(--ui-panel-border-style);
@@ -31,7 +31,7 @@
   }
 }
 
-.dropdown {
+.ui-dropdown {
   background-color: var(--ui-dropdown-bg);
   border: var(--ui-dropdown-border-width) var(--ui-dropdown-border-style) var(--ui-dropdown-border-color);
   border-radius: var(--radius);
@@ -50,7 +50,7 @@
     border: var(--ui-dropdown-border-width) var(--ui-dropdown-border-style) var(--ui-dropdown-border-color);
   }
 }
-.dropdown-item {
+.ui-dropdown-item {
   display: block;
   padding: var(--ui-dropdown-item-padding);
   width: 100%;
@@ -65,28 +65,28 @@
   }
 }
 
-.dropdown:where([data-ui-current-placement="dialog"]) {
+.ui-dropdown:where([data-ui-current-placement="dialog"]) {
   inset: var(--ui-dropdown-boundary-offset-top) var(--ui-dropdown-boundary-offset-end)
     var(--ui-dropdown-boundary-offset-bottom) var(--ui-dropdown-boundary-offset-start);
   max-height: calc(100% - var(--ui-dropdown-boundary-offset-top) - var(--ui-dropdown-boundary-offset-bottom));
 }
 
-.dropdown::backdrop {
+.ui-dropdown::backdrop {
   background-color: var(--ui-dropdown-backdrop-light-bg);
 }
-.dropdown[data-dropdown-current-options~="modal"]::backdrop {
+.ui-dropdown[data-dropdown-current-options~="modal"]::backdrop {
   background-color: var(--ui-dropdown-backdrop-bg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .dropdown::backdrop {
+  .ui-dropdown::backdrop {
     transition: var(--ui-dropdown-backdrop-transition);
   }
-  .dropdown:where(.ui-enter-active) {
+  .ui-dropdown:where(.ui-enter-active) {
     animation: var(--animation-fade-in), var(--animation-scale-in-up);
     animation-duration: var(--ui-dropdown-transition-duration);
   }
-  .dropdown:where(.ui-leave-active) {
+  .ui-dropdown:where(.ui-leave-active) {
     animation: var(--animation-fade-out), var(--animation-scale-out-down);
     animation-duration: var(--ui-dropdown-transition-duration);
   }

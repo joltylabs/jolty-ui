@@ -1,4 +1,4 @@
-.radio {
+.ui-radio {
   --ui-radio-bg: var(--ui-control-bg);
   --ui-radio-color: white;
   --ui-radio-border-style: var(--ui-control-border-style);
@@ -14,11 +14,11 @@
   --ui-radio-checked-bg-hover: var(--accent-10);
   --ui-radio-checked-border-color: var(--accent-9);
   --ui-radio-checked-border-color-hover: var(--accent-10);
-  --ui-radio-icon: var(--icon-check);
+  --ui-radio-icon: var(--ui-icon-check);
   --ui-radio-size: 1rem;
 }
 
-.radio {
+.ui-radio {
   appearance: none;
   width: var(--ui-radio-size);
   height: fit-content;
