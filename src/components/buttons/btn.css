@@ -37,31 +37,31 @@
 }
 
 .ui-btn--xs {
-  --ui-btn-size: var(--size-xs);
+  --ui-btn-size: var(--ui-size-xs);
   --ui-btn-padding: 0.5rem;
   --ui-btn-radius: var(--radius-xs);
   font-size: var(--text-xs);
 }
 .ui-btn--sm {
-  --ui-btn-size: var(--size-sm);
+  --ui-btn-size: var(--ui-size-sm);
   --ui-btn-padding: 0.625rem;
   --ui-btn-radius: var(--radius-sm);
   font-size: var(--text-sm);
 }
 .ui-btn--md {
-  --ui-btn-size: var(--size-md);
+  --ui-btn-size: var(--ui-size-md);
   --ui-btn-padding: 0.75rem;
   --ui-btn-radius: var(--radius-sm);
   font-size: var(--text-sm);
 }
 .ui-btn--lg {
-  --ui-btn-size: var(--size-lg);
+  --ui-btn-size: var(--ui-size-lg);
   --ui-btn-padding: 1.125rem;
   --ui-btn-radius: var(--radius);
   font-size: var(--text-md);
 }
 .ui-btn--xl {
-  --ui-btn-size: var(--size-xl);
+  --ui-btn-size: var(--ui-size-xl);
   --ui-btn-padding: 1.625rem;
   --ui-btn-radius: var(--radius);
   font-size: var(--text-md);

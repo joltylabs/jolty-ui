@@ -13,7 +13,7 @@
   --ui-form-control-border-radius: var(--ui-control-border-radius);
   --ui-form-control-padding-y: 0.5rem;
   --ui-form-control-padding-x: 0.75rem;
-  --ui-form-control-height: var(--size-md);
+  --ui-form-control-height: var(--ui-size-md);
   --ui-form-control-select-arrow-color: var(--gray-11);
   --ui-form-control-select-arrow-size: 0.3125rem;
   --ui-form-control-select-arrow-offset: 1rem;
@@ -103,12 +103,12 @@
 }
 
 .ui-form-control--sm {
-  --ui-form-control-height: var(--size-sm);
+  --ui-form-control-height: var(--ui-size-sm);
   --ui-form-control-padding-x: 0.625rem;
   --ui-form-control-border-radius: var(--radius-sm);
 }
 .ui-form-control--lg {
-  --ui-form-control-height: var(--size-lg);
+  --ui-form-control-height: var(--ui-size-lg);
   --ui-form-control-padding-x: 1.125rem;
   --ui-form-control-font-size: 1rem;
 }

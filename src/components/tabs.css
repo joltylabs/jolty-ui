@@ -1,6 +1,6 @@
 .ui-tabs {
   --ui-tabs-bg: transparent;
-  --ui-tabs-height: var(--size-lg);
+  --ui-tabs-height: var(--ui-size-lg);
   --ui-tabs-border-width: 0;
   --ui-tabs-border-style: var(--ui-border-style);
   --ui-tabs-border-color: var(--ui-border-color);
@@ -48,7 +48,7 @@
 }
 
 .ui-tabs--sm {
-  --ui-tabs-height: var(--size-md);
+  --ui-tabs-height: var(--ui-size-md);
   --ui-tab-font-size: var(--text-xs);
   --ui-tab-padding: 0 0.75rem;
 }

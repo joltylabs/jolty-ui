@@ -1,10 +1,9 @@
 .ui-btn-close {
-  --ui-btn-close-color: currentColor;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
-  width: var(--ui-btn-close-size, var(--size-xs));
+  width: var(--ui-btn-close-size, var(--ui-size-xs));
   border-radius: var(--ui-btn-close-radius, var(--radius-xs));
   transition-duration: var(--duration-1);
   transition-property: var(--transition-property);
@@ -17,7 +16,7 @@
   &:where(:not(.ui-btn-close--no-bg)):hover {
     background: var(
       --ui-btn-close-hover-bg,
-      color-mix(in var(--ui-space), var(--ui-btn-close-color) 7.5%, oklch(0 0 var(--gray-hue) / 0))
+      color-mix(in var(--ui-space), var(--ui-btn-close-color, currentColor) 8%, transparent)
     );
   }
   &:focus-visible {
@@ -25,8 +24,8 @@
       --ui-btn-close-outline-color,
       color-mix(
         in var(--ui-space),
-        var(--ui-btn-close-outline-color, var(--ui-btn-close-color)) 25%,
-        oklch(0 0 var(--gray-hue) / 0)
+        var(--ui-btn-close-outline-color, var(--ui-btn-close-color, currentColor)) 25%,
+        transparent
       )
     );
   }
