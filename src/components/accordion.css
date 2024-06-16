@@ -1,11 +1,11 @@
 .ui-accordion {
   --ui-accordion-bg: transparent;
   --ui-accordion-gap: 0.375rem;
-  --ui-accordion-header-bg: var(--gray-1);
-  --ui-accordion-header-hover-bg: var(--gray-2);
+  --ui-accordion-header-bg: var(--gray-a1);
+  --ui-accordion-header-hover-bg: var(--gray-a2);
   --ui-accordion-header-open-color: var(--gray-12);
-  --ui-accordion-header-open-bg: var(--gray-1);
-  --ui-accordion-header-open-bg-hover: var(--gray-2);
+  --ui-accordion-header-open-bg: var(--gray-a1);
+  --ui-accordion-header-open-bg-hover: var(--gray-a2);
   --ui-accordion-header-padding: 0.75rem 0.75rem 0.75rem 1rem;
   --ui-accordion-header-font-size: var(--text-sm);
   --ui-accordion-header-font-weight: 500;
