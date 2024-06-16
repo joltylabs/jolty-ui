@@ -43,7 +43,7 @@
   --ui-boundary-offset-start: 1rem;
 }
 
-:where(:root, [data-ui-mode], [data-ui-pallete]) {
+:where(:root, [data-ui-mode], [data-ui-palette]) {
   --ui-accent-color: var(--accent-9);
   --ui-main-bg: var(--gray-0);
   --ui-color: var(--gray-12);
@@ -94,14 +94,14 @@
 :where(
     :root[data-ui-mode="dark"],
     :root[data-ui-mode="dark"]
-      [data-ui-pallete]:not(
+      [data-ui-palette]:not(
         [data-ui-mode="reverse"],
         [data-ui-mode="reverse"] *,
         [data-ui-mode="light"],
         [data-ui-mode="light"] *
       ),
     :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
-    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]) [data-ui-pallete]
+    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]) [data-ui-palette]
   ) {
   --ui-panel-bg: var(--gray-1);
   --ui-panel-border-style: solid;

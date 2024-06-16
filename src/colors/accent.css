@@ -5,7 +5,7 @@
 :where(
     :root:not([data-ui-mode="dark"]),
     :root:not([data-ui-mode="dark"])
-      :is([data-ui-pallete=""], [data-ui-pallete~="accent"]):not(
+      :is([data-ui-palette=""], [data-ui-palette~="accent"]):not(
         [data-ui-mode="reverse"],
         [data-ui-mode="reverse"] *,
         [data-ui-mode="dark"],
@@ -14,7 +14,7 @@
     [data-ui-mode="dark"] :is([data-ui-mode="reverse"], [data-ui-mode="light"]),
     [data-ui-mode="dark"]
       :is([data-ui-mode="reverse"], [data-ui-mode="light"])
-      :is([data-ui-pallete=""], [data-ui-pallete~="accent"])
+      :is([data-ui-palette=""], [data-ui-palette~="accent"])
   ) {
   --accent-1: oklch(0.9742 0.012 var(--accent-hue));
   --accent-2: oklch(0.9612 0.021 var(--accent-hue));
@@ -45,7 +45,7 @@
 :where(
     :root[data-ui-mode="dark"],
     :root[data-ui-mode="dark"]
-      :is([data-ui-pallete=""], [data-ui-pallete~="accent"]):not(
+      :is([data-ui-palette=""], [data-ui-palette~="accent"]):not(
         [data-ui-mode="reverse"],
         [data-ui-mode="reverse"] *,
         [data-ui-mode="light"],
@@ -54,7 +54,7 @@
     :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
     :root:not([data-ui-mode="dark"])
       :is([data-ui-mode="reverse"], [data-ui-mode="dark"])
-      :is([data-ui-pallete=""], [data-ui-pallete~="accent"])
+      :is([data-ui-palette=""], [data-ui-palette~="accent"])
   ) {
   --accent-1: oklch(0.225 0.033 var(--accent-hue));
   --accent-2: oklch(0.254 0.051 var(--accent-hue));

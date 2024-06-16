@@ -4,7 +4,7 @@
 :where(
     :root:not([data-ui-mode="dark"]),
     :root:not([data-ui-mode="dark"])
-      :is([data-ui-pallete=""], [data-ui-pallete~="success"]):not(
+      :is([data-ui-palette=""], [data-ui-palette~="success"]):not(
         [data-ui-mode="reverse"],
         [data-ui-mode="reverse"] *,
         [data-ui-mode="dark"],
@@ -13,7 +13,7 @@
     [data-ui-mode="dark"] :is([data-ui-mode="reverse"], [data-ui-mode="light"]),
     [data-ui-mode="dark"]
       :is([data-ui-mode="reverse"], [data-ui-mode="light"])
-      :is([data-ui-pallete=""], [data-ui-pallete~="success"])
+      :is([data-ui-palette=""], [data-ui-palette~="success"])
   ) {
   --success-1: oklch(0.9742 0.012 var(--success-hue));
   --success-2: oklch(0.9612 0.021 var(--success-hue));
@@ -44,7 +44,7 @@
 :where(
     :root[data-ui-mode="dark"],
     :root[data-ui-mode="dark"]
-      :is([data-ui-pallete=""], [data-ui-pallete~="success"]):not(
+      :is([data-ui-palette=""], [data-ui-palette~="success"]):not(
         [data-ui-mode="reverse"],
         [data-ui-mode="reverse"] *,
         [data-ui-mode="light"],
@@ -53,7 +53,7 @@
     :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
     :root:not([data-ui-mode="dark"])
       :is([data-ui-mode="reverse"], [data-ui-mode="dark"])
-      :is([data-ui-pallete=""], [data-ui-pallete~="success"])
+      :is([data-ui-palette=""], [data-ui-palette~="success"])
   ) {
   --success-1: oklch(0.225 0.033 var(--success-hue));
   --success-2: oklch(0.255 0.051 var(--success-hue));
