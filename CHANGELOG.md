@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [0.3]
+## [0.3.1]
 ### BREAKING CHANGES
 - Renamed [data-mode] attribute to [data-ui-mode]
 - Renamed --size-{name} to --ui-size-{name} CSS variables
