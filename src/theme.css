@@ -12,13 +12,6 @@
   --text-3xl: calc(30 / 16 * 1rem);
   --text-4xl: calc(36 / 16 * 1rem);
 
-  --size-xxs: calc(24 / 16 * 1rem);
-  --size-xs: calc(28 / 16 * 1rem);
-  --size-sm: calc(32 / 16 * 1rem);
-  --size-md: calc(40 / 16 * 1rem);
-  --size-lg: calc(48 / 16 * 1rem);
-  --size-xl: calc(56 / 16 * 1rem);
-
   --radius-xs: calc(4 / 16 * 1rem);
   --radius-sm: calc(6 / 16 * 1rem);
   --radius: calc(8 / 16 * 1rem);
@@ -35,6 +28,13 @@
   --transition-property: color, background-color, border-color, text-decoration-color, fill, stroke,
     outline-color, opacity, box-shadow, transform, translate, scale, skew, filter, backdrop-filter;
 
+  --ui-size-xxs: calc(24 / 16 * 1rem);
+  --ui-size-xs: calc(28 / 16 * 1rem);
+  --ui-size-sm: calc(32 / 16 * 1rem);
+  --ui-size-md: calc(40 / 16 * 1rem);
+  --ui-size-lg: calc(48 / 16 * 1rem);
+  --ui-size-xl: calc(56 / 16 * 1rem);
+
   --ui-top-layer-z-index: 999;
 
   --ui-boundary-offset-top: 1rem;
@@ -43,7 +43,7 @@
   --ui-boundary-offset-start: 1rem;
 }
 
-:where(:root, [data-mode="dark"], [data-mode="light"], [data-mode="reverse"]) {
+:where(:root, [data-ui-mode], [data-ui-pallete]) {
   --ui-accent-color: var(--accent-9);
   --ui-main-bg: var(--gray-0);
   --ui-color: var(--gray-12);
@@ -90,7 +90,19 @@
     --ui-backdrop-light-bg: oklch(var(--gray-darkest-oklch) / 0.15);
   }
 }
-:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+
+:where(
+    :root[data-ui-mode="dark"],
+    :root[data-ui-mode="dark"]
+      [data-ui-pallete]:not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="light"],
+        [data-ui-mode="light"] *
+      ),
+    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]) [data-ui-pallete]
+  ) {
   --ui-panel-bg: var(--gray-1);
   --ui-panel-border-style: solid;
 }
@@ -99,4 +111,7 @@
   accent-color: var(--ui-accent-color);
   background-color: var(--ui-main-bg);
   color: var(--gray-12);
+}
+::selection {
+  background: var(--accent-a4);
 }

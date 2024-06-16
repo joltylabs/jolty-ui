@@ -1,7 +1,20 @@
 :where(:root) {
   --info-hue: 250;
 }
-:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+:where(
+    :root:not([data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="info"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="dark"],
+        [data-ui-mode="dark"] *
+      ),
+    [data-ui-mode="dark"] :is([data-ui-mode="reverse"], [data-ui-mode="light"]),
+    [data-ui-mode="dark"]
+      :is([data-ui-mode="reverse"], [data-ui-mode="light"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="info"])
+  ) {
   --info-1: oklch(0.9742 0.012 var(--info-hue));
   --info-2: oklch(0.9612 0.021 var(--info-hue));
   --info-3: oklch(0.9377 0.034 var(--info-hue));
@@ -28,19 +41,32 @@
   --info-a11: oklch(0.4 0.18 var(--info-hue) / 0.86);
   --info-a12: oklch(0.3 0.11 var(--info-hue) / 0.9);
 }
-:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
-  --info-1: oklch(22.5% 0.033 var(--info-hue));
-  --info-2: oklch(25.49% 0.051 var(--info-hue));
-  --info-3: oklch(29.33% 0.071 var(--info-hue));
-  --info-4: oklch(32.5% 0.085 var(--info-hue));
-  --info-5: oklch(35.38% 0.099 var(--info-hue));
-  --info-6: oklch(40.38% 0.119 var(--info-hue));
-  --info-7: oklch(45.4% 0.138 var(--info-hue));
-  --info-8: oklch(49.54% 0.16 var(--info-hue));
-  --info-9: oklch(56.19% 0.201 var(--info-hue));
-  --info-10: oklch(60.45% 0.192 var(--info-hue));
-  --info-11: oklch(81.08% 0.106 var(--info-hue));
-  --info-12: oklch(92.23% 0.043 var(--info-hue));
+:where(
+    :root[data-ui-mode="dark"],
+    :root[data-ui-mode="dark"]
+      :is([data-ui-pallete=""], [data-ui-pallete~="info"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="light"],
+        [data-ui-mode="light"] *
+      ),
+    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-mode="reverse"], [data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="info"])
+  ) {
+  --info-1: oklch(0.225 0.033 var(--info-hue));
+  --info-2: oklch(0.255 0.051 var(--info-hue));
+  --info-3: oklch(0.293 0.071 var(--info-hue));
+  --info-4: oklch(0.325 0.085 var(--info-hue));
+  --info-5: oklch(0.354 0.099 var(--info-hue));
+  --info-6: oklch(0.404 0.119 var(--info-hue));
+  --info-7: oklch(0.454 0.138 var(--info-hue));
+  --info-8: oklch(0.495 0.16 var(--info-hue));
+  --info-9: oklch(0.562 0.201 var(--info-hue));
+  --info-10: oklch(0.604 0.192 var(--info-hue));
+  --info-11: oklch(0.811 0.106 var(--info-hue));
+  --info-12: oklch(0.922 0.043 var(--info-hue));
 
   --info-a1: oklch(0.65 0.22 var(--info-hue) / 0.1);
   --info-a2: oklch(0.65 0.22 var(--info-hue) / 0.16);

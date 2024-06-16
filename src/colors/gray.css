@@ -4,7 +4,21 @@
 
   --gray-darkest-oklch: 0.16 0.005 var(--gray-hue);
   --gray-darkest: oklch(var(--gray-darkest-oklch));
-
+}
+:where(
+    :root:not([data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="gray"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="dark"],
+        [data-ui-mode="dark"] *
+      ),
+    [data-ui-mode="dark"] :is([data-ui-mode="reverse"], [data-ui-mode="light"]),
+    [data-ui-mode="dark"]
+      :is([data-ui-mode="reverse"], [data-ui-mode="light"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="gray"])
+  ) {
   --gray-a1-light: oklch(0.16 0.04 var(--gray-hue) / 0.03);
   --gray-a2-light: oklch(0.16 0.04 var(--gray-hue) / 0.06);
   --gray-a3-light: oklch(0.16 0.04 var(--gray-hue) / 0.09);
@@ -32,34 +46,6 @@
   --gray-11-light: oklch(0.49 0.02 var(--gray-hue));
   --gray-12-light: oklch(0.27 0.013 var(--gray-hue));
 
-  --gray-a1-dark: oklch(0.98 0.084 var(--gray-hue) / 0.04);
-  --gray-a2-dark: oklch(0.98 0.072 var(--gray-hue) / 0.06);
-  --gray-a3-dark: oklch(0.98 0.06 var(--gray-hue) / 0.1);
-  --gray-a4-dark: oklch(0.98 0.06 var(--gray-hue) / 0.13);
-  --gray-a5-dark: oklch(0.98 0.06 var(--gray-hue) / 0.16);
-  --gray-a6-dark: oklch(0.98 0.056 var(--gray-hue) / 0.2);
-  --gray-a7-dark: oklch(0.98 0.052 var(--gray-hue) / 0.26);
-  --gray-a8-dark: oklch(0.98 0.048 var(--gray-hue) / 0.32);
-  --gray-a9-dark: oklch(0.98 0.04 var(--gray-hue) / 0.38);
-  --gray-a10-dark: oklch(0.98 0.04 var(--gray-hue) / 0.42);
-  --gray-a11-dark: oklch(0.98 0.02 var(--gray-hue) / 0.65);
-  --gray-a12-dark: oklch(0.98 0.004 var(--gray-hue) / 0.98);
-
-  --gray-0-dark: oklch(0.17 0.001 var(--gray-hue));
-  --gray-1-dark: oklch(0.21 0.006 var(--gray-hue));
-  --gray-2-dark: oklch(0.23 0.01 var(--gray-hue));
-  --gray-3-dark: oklch(0.27 0.012 var(--gray-hue));
-  --gray-4-dark: oklch(0.3 0.013 var(--gray-hue));
-  --gray-5-dark: oklch(0.33 0.013 var(--gray-hue));
-  --gray-6-dark: oklch(0.36 0.016 var(--gray-hue));
-  --gray-7-dark: oklch(0.41 0.019 var(--gray-hue));
-  --gray-8-dark: oklch(0.46 0.02 var(--gray-hue));
-  --gray-9-dark: oklch(0.51 0.02 var(--gray-hue));
-  --gray-10-dark: oklch(0.55 0.02 var(--gray-hue));
-  --gray-11-dark: oklch(0.73 0.016 var(--gray-hue));
-  --gray-12-dark: oklch(0.96 0.004 var(--gray-hue));
-}
-:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
   &,
   &::backdrop,
   ::backdrop {
@@ -91,7 +77,47 @@
     --gray-a12: var(--gray-a12-light);
   }
 }
-:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+:where(
+    :root[data-ui-mode="dark"],
+    :root[data-ui-mode="dark"]
+      :is([data-ui-pallete=""], [data-ui-pallete~="gray"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="light"],
+        [data-ui-mode="light"] *
+      ),
+    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-mode="reverse"], [data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="gray"])
+  ) {
+  --gray-a1-dark: oklch(0.98 0.084 var(--gray-hue) / 0.04);
+  --gray-a2-dark: oklch(0.98 0.072 var(--gray-hue) / 0.06);
+  --gray-a3-dark: oklch(0.98 0.06 var(--gray-hue) / 0.1);
+  --gray-a4-dark: oklch(0.98 0.06 var(--gray-hue) / 0.13);
+  --gray-a5-dark: oklch(0.98 0.06 var(--gray-hue) / 0.16);
+  --gray-a6-dark: oklch(0.98 0.056 var(--gray-hue) / 0.2);
+  --gray-a7-dark: oklch(0.98 0.052 var(--gray-hue) / 0.26);
+  --gray-a8-dark: oklch(0.98 0.048 var(--gray-hue) / 0.32);
+  --gray-a9-dark: oklch(0.98 0.04 var(--gray-hue) / 0.38);
+  --gray-a10-dark: oklch(0.98 0.04 var(--gray-hue) / 0.42);
+  --gray-a11-dark: oklch(0.98 0.02 var(--gray-hue) / 0.65);
+  --gray-a12-dark: oklch(0.98 0.004 var(--gray-hue) / 0.98);
+
+  --gray-0-dark: oklch(0.17 0.001 var(--gray-hue));
+  --gray-1-dark: oklch(0.21 0.006 var(--gray-hue));
+  --gray-2-dark: oklch(0.23 0.01 var(--gray-hue));
+  --gray-3-dark: oklch(0.27 0.012 var(--gray-hue));
+  --gray-4-dark: oklch(0.3 0.013 var(--gray-hue));
+  --gray-5-dark: oklch(0.33 0.013 var(--gray-hue));
+  --gray-6-dark: oklch(0.36 0.016 var(--gray-hue));
+  --gray-7-dark: oklch(0.41 0.019 var(--gray-hue));
+  --gray-8-dark: oklch(0.46 0.02 var(--gray-hue));
+  --gray-9-dark: oklch(0.51 0.02 var(--gray-hue));
+  --gray-10-dark: oklch(0.55 0.02 var(--gray-hue));
+  --gray-11-dark: oklch(0.73 0.016 var(--gray-hue));
+  --gray-12-dark: oklch(0.96 0.004 var(--gray-hue));
+
   &,
   &::backdrop,
   ::backdrop {

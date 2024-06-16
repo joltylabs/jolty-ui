@@ -1,7 +1,20 @@
 :where(:root) {
-  --success-hue: 125;
+  --success-hue: 160;
 }
-:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+:where(
+    :root:not([data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="success"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="dark"],
+        [data-ui-mode="dark"] *
+      ),
+    [data-ui-mode="dark"] :is([data-ui-mode="reverse"], [data-ui-mode="light"]),
+    [data-ui-mode="dark"]
+      :is([data-ui-mode="reverse"], [data-ui-mode="light"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="success"])
+  ) {
   --success-1: oklch(0.9742 0.012 var(--success-hue));
   --success-2: oklch(0.9612 0.021 var(--success-hue));
   --success-3: oklch(0.9377 0.034 var(--success-hue));
@@ -28,19 +41,32 @@
   --success-a11: oklch(0.4 0.18 var(--success-hue) / 0.86);
   --success-a12: oklch(0.3 0.11 var(--success-hue) / 0.9);
 }
-:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
-  --success-1: oklch(22.5% 0.033 var(--success-hue));
-  --success-2: oklch(25.49% 0.051 var(--success-hue));
-  --success-3: oklch(29.33% 0.071 var(--success-hue));
-  --success-4: oklch(32.5% 0.085 var(--success-hue));
-  --success-5: oklch(35.38% 0.099 var(--success-hue));
-  --success-6: oklch(40.38% 0.119 var(--success-hue));
-  --success-7: oklch(45.4% 0.138 var(--success-hue));
-  --success-8: oklch(49.54% 0.16 var(--success-hue));
-  --success-9: oklch(56.19% 0.201 var(--success-hue));
-  --success-10: oklch(60.45% 0.192 var(--success-hue));
-  --success-11: oklch(81.08% 0.106 var(--success-hue));
-  --success-12: oklch(92.23% 0.043 var(--success-hue));
+:where(
+    :root[data-ui-mode="dark"],
+    :root[data-ui-mode="dark"]
+      :is([data-ui-pallete=""], [data-ui-pallete~="success"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="light"],
+        [data-ui-mode="light"] *
+      ),
+    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-mode="reverse"], [data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="success"])
+  ) {
+  --success-1: oklch(0.225 0.033 var(--success-hue));
+  --success-2: oklch(0.255 0.051 var(--success-hue));
+  --success-3: oklch(0.293 0.071 var(--success-hue));
+  --success-4: oklch(0.325 0.085 var(--success-hue));
+  --success-5: oklch(0.354 0.099 var(--success-hue));
+  --success-6: oklch(0.404 0.119 var(--success-hue));
+  --success-7: oklch(0.454 0.138 var(--success-hue));
+  --success-8: oklch(0.495 0.16 var(--success-hue));
+  --success-9: oklch(0.562 0.201 var(--success-hue));
+  --success-10: oklch(0.604 0.192 var(--success-hue));
+  --success-11: oklch(0.811 0.106 var(--success-hue));
+  --success-12: oklch(0.923 0.043 var(--success-hue));
 
   --success-a1: oklch(0.65 0.22 var(--success-hue) / 0.1);
   --success-a2: oklch(0.65 0.22 var(--success-hue) / 0.16);

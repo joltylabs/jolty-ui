@@ -1,7 +1,20 @@
 :where(:root) {
   --warning-hue: 70;
 }
-:where(:root:not([data-mode="dark"]), [data-mode="dark"] :is([data-mode="reverse"], [data-mode="light"])) {
+:where(
+    :root:not([data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="warning"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="dark"],
+        [data-ui-mode="dark"] *
+      ),
+    [data-ui-mode="dark"] :is([data-ui-mode="reverse"], [data-ui-mode="light"]),
+    [data-ui-mode="dark"]
+      :is([data-ui-mode="reverse"], [data-ui-mode="light"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="warning"])
+  ) {
   --warning-1: oklch(0.9783 0.012 var(--warning-hue));
   --warning-2: oklch(0.9624 0.021 var(--warning-hue));
   --warning-3: oklch(0.9426 0.034 var(--warning-hue));
@@ -28,7 +41,20 @@
   --warning-a11: oklch(0.49 0.23 var(--warning-hue) / 0.86);
   --warning-a12: oklch(0.34 0.154 var(--warning-hue) / 0.9);
 }
-:where([data-mode="dark"], :root:not([data-mode="dark"]) [data-mode="reverse"]) {
+:where(
+    :root[data-ui-mode="dark"],
+    :root[data-ui-mode="dark"]
+      :is([data-ui-pallete=""], [data-ui-pallete~="warning"]):not(
+        [data-ui-mode="reverse"],
+        [data-ui-mode="reverse"] *,
+        [data-ui-mode="light"],
+        [data-ui-mode="light"] *
+      ),
+    :root:not([data-ui-mode="dark"]) :is([data-ui-mode="reverse"], [data-ui-mode="dark"]),
+    :root:not([data-ui-mode="dark"])
+      :is([data-ui-mode="reverse"], [data-ui-mode="dark"])
+      :is([data-ui-pallete=""], [data-ui-pallete~="warning"])
+  ) {
   --warning-1: oklch(0.2273 0.027 var(--warning-hue));
   --warning-2: oklch(0.2557 0.041 var(--warning-hue));
   --warning-3: oklch(0.2989 0.059 var(--warning-hue));
