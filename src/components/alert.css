@@ -40,6 +40,10 @@
 .ui-alert--primary {
   --ui-alert-bg: var(--accent-a2);
   --ui-alert-color: var(--accent-a11);
+  ::selection {
+    color: var(--accent-a12);
+    background: var(--accent-a4);
+  }
   &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--accent-a1);
     --ui-alert-border-color: var(--accent-a6);
@@ -56,6 +60,10 @@
 .ui-alert--danger {
   --ui-alert-bg: var(--danger-a2);
   --ui-alert-color: var(--danger-a11);
+  ::selection {
+    color: var(--danger-a12);
+    background: var(--danger-a4);
+  }
   &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--danger-a1);
     --ui-alert-border-color: var(--danger-a6);
@@ -72,6 +80,10 @@
 .ui-alert--info {
   --ui-alert-bg: var(--info-a2);
   --ui-alert-color: var(--info-a11);
+  ::selection {
+    color: var(--info-a12);
+    background: var(--info-a4);
+  }
   &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--info-a1);
     --ui-alert-border-color: var(--info-a6);
@@ -88,6 +100,10 @@
 .ui-alert--secondary {
   --ui-alert-bg: var(--gray-a2);
   --ui-alert-color: var(--gray-a11);
+  ::selection {
+    color: var(--gray-a12);
+    background: var(--gray-a4);
+  }
   &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--gray-a1);
     --ui-alert-border-color: var(--gray-a6);
@@ -104,6 +120,10 @@
 .ui-alert--success {
   --ui-alert-bg: var(--success-a2);
   --ui-alert-color: var(--success-a11);
+  ::selection {
+    color: var(--success-a12);
+    background: var(--success-a4);
+  }
   &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--success-a1);
     --ui-alert-border-color: var(--success-a6);
@@ -120,6 +140,10 @@
 .ui-alert--warning {
   --ui-alert-bg: var(--warning-a2);
   --ui-alert-color: var(--warning-a11);
+  ::selection {
+    color: var(--warning-a12);
+    background: var(--warning-a4);
+  }
   &:where(.ui-alert--surface) {
     --ui-alert-bg: var(--warning-a1);
     --ui-alert-border-color: var(--warning-a6);

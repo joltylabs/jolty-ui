@@ -111,6 +111,10 @@
   );
   --ui-toast-border-color: var(--danger-3);
   --ui-toast-border-style: solid;
+  ::selection {
+    color: var(--danger-12);
+    background: var(--danger-a4);
+  }
 }
 .ui-toast--success {
   --ui-toast-icon: var(--ui-icon-check-circle);
@@ -123,6 +127,10 @@
   );
   --ui-toast-border-color: var(--success-3);
   --ui-toast-border-style: solid;
+  ::selection {
+    color: var(--success-12);
+    background: var(--success-a4);
+  }
 }
 .ui-toast--warning {
   --ui-toast-icon: var(--ui-icon-warning);
@@ -135,6 +143,10 @@
   );
   --ui-toast-border-color: var(--warning-3);
   --ui-toast-border-style: solid;
+  ::selection {
+    color: var(--warning-12);
+    background: var(--warning-a4);
+  }
 }
 .ui-toast--info {
   --ui-toast-icon: var(--ui-icon-info-circle);
@@ -147,6 +159,10 @@
   );
   --ui-toast-border-color: var(--info-3);
   --ui-toast-border-style: solid;
+  ::selection {
+    color: var(--info-12);
+    background: var(--info-a4);
+  }
 }
 
 :is(.ui-toasts--start, .ui-toasts--top-start, .ui-toasts--bottom-start) {
